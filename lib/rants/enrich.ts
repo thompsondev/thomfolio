@@ -47,7 +47,7 @@ export async function generateRantMetadata(bodyText: string) {
         "gpt-4.1-nano",
       schemaName: "rant_editorial_metadata",
       schemaDescription:
-        "Editorial metadata for a personal Rant written by Tomiwa David.",
+        "Editorial metadata for a personal Rant written by Opeyemi Thompson.",
       schema: {
         type: "object",
         additionalProperties: false,
@@ -70,7 +70,7 @@ export async function generateRantMetadata(bodyText: string) {
         {
           role: "system",
           content:
-            "You prepare metadata for Tomiwa David's Rants. Preserve his meaning and voice. Do not rewrite the body. Use plain, thoughtful English without em dashes, hype, hashtags, or invented claims. The excerpt is one concise sentence. The SEO description is factual and inviting. Return one to three short Title Case topic tags and a lowercase URL slug.",
+            "You prepare metadata for Opeyemi Thompson's Rants. Preserve their meaning and voice. Do not rewrite the body. Use plain, thoughtful English without em dashes, hype, hashtags, or invented claims. The excerpt is one concise sentence. The SEO description is factual and inviting. Return one to three short Title Case topic tags and a lowercase URL slug.",
         },
         { role: "user", content: bodyText.slice(0, 12000) },
       ],

@@ -26,7 +26,7 @@ export async function generateMetadata({
       description: rant.seoDescription,
       publishedTime: rant.publishedAt ?? undefined,
       modifiedTime: rant.updatedAt,
-      authors: ["Tomiwa David"],
+      authors: ["Opeyemi Thompson"],
       tags: rant.tags,
     },
     twitter: {

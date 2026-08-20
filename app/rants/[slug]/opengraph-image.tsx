@@ -4,7 +4,7 @@ import { ogSize, renderPageOgImage } from "@/lib/og-image"
 import { formatOgSitePath } from "@/lib/og-path"
 import { getPublishedRantBySlug } from "@/lib/rants/db"
 
-export const alt = "A Rant by Tomiwa David"
+export const alt = "A Rant by Opeyemi Thompson"
 export const size = ogSize
 export const contentType = "image/png"
 

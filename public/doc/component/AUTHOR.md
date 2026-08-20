@@ -217,11 +217,11 @@ Existing installs are copies in other people's repos — they won't auto-update.
 
 ### Keeps publishing pipeline
 
-Keeps is Tomiwa's public collection of useful posts, articles, videos, and
+Keeps is Opeyemi's public collection of useful posts, articles, videos, and
 ideas. It is not a product for visitors to save their own links. Telegram is the
 private publishing input; `/keeps` is the public reading surface.
 
-Visitors can bookmark Tomiwa's Keeps with the save icon. The selected Keep IDs
+Visitors can bookmark Opeyemi's Keeps with the save icon. The selected Keep IDs
 live only in `localStorage` under `daaysorn-keeps-favourites`; no visitor data is
 written to Postgres until the visitor chooses **Export to other devices**.
 **Saved Keeps** switches the collection to the visitor's saved items. Exporting
@@ -432,9 +432,9 @@ Official references:
 The complete flow is:
 
 ```text
-Tomiwa shares a link with the Telegram bot
+Opeyemi shares a link with the Telegram bot
   → Telegram POSTs the update to /api/telegram/keeps
-  → the route verifies Telegram's secret and Tomiwa's Telegram user ID
+  → the route verifies Telegram's secret and Opeyemi's Telegram user ID
   → the route acknowledges Telegram immediately
   → background processing reads safe public metadata from the link
   → Cencori + gpt-4.1-nano creates a structured title, summary, author, and tags
@@ -492,7 +492,7 @@ TABLE`, index creation, or cleanup scans; keeping DDL out of request paths
   back without retesting the exact Keeps request.
 - `TELEGRAM_BOT_TOKEN` comes from the verified `@BotFather` account.
 - `TELEGRAM_WEBHOOK_SECRET` authenticates webhook requests from Telegram.
-- `TELEGRAM_OWNER_ID` restricts publishing to Tomiwa's Telegram account.
+- `TELEGRAM_OWNER_ID` restricts publishing to Opeyemi's Telegram account.
 - `ABLY_API_KEY` is a server-only Ably key used to publish change notifications
   and mint short-lived, subscribe-only tokens for one Saved Keeps collection.
   Never expose it through a `NEXT_PUBLIC_*` variable.
@@ -903,7 +903,7 @@ The publishing flow reuses the owner-only Telegram bot but keeps Gallery
 messages explicitly separate from Keeps:
 
 ```text
-Tomiwa sends images, videos, or a Telegram media album
+Opeyemi sends images, videos, or a Telegram media album
   → Telegram POSTs the update to the existing webhook
   → the route verifies Telegram's secret and TELEGRAM_OWNER_ID
   → photo[], video, or an image/video document enters the media workflow

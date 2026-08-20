@@ -87,7 +87,7 @@ export default function manifest(): DaaysornManifest {
       {
         name: "Rants",
         short_name: "Rants",
-        description: "Open Rants by Tomiwa David.",
+        description: "Open Rants by Opeyemi Thompson.",
         url: "/rants",
         icons: [{ src: "/icons/pwa-96.png", sizes: "96x96" }],
       },

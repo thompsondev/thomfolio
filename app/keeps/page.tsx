@@ -10,20 +10,20 @@ export const fetchCache = "force-no-store"
 export const metadata: Metadata = {
   title: "Keeps",
   description:
-    "Browse posts, articles, videos, and ideas kept and summarized by Tomiwa David.",
+    "Browse posts, articles, videos, and ideas kept and summarized by Opeyemi Thompson.",
   alternates: { canonical: "/keeps" },
   openGraph: {
     type: "website",
     url: "/keeps",
     title: "Keeps | daaysorn",
     description:
-      "Browse posts, articles, videos, and ideas kept and summarized by Tomiwa David.",
+      "Browse posts, articles, videos, and ideas kept and summarized by Opeyemi Thompson.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Keeps | daaysorn",
     description:
-      "Browse posts, articles, videos, and ideas kept and summarized by Tomiwa David.",
+      "Browse posts, articles, videos, and ideas kept and summarized by Opeyemi Thompson.",
     creator: "@daaysorn",
   },
 }
