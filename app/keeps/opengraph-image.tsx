@@ -5,7 +5,7 @@ const og = createPageOgImage({
   description: "Posts, articles, videos, and ideas I found worth keeping.",
   path: "/keeps",
   labels: ["All", "Articles", "Videos", "Ideas"],
-  alt: "Keeps by Tomiwa David, a collection of posts, articles, videos, and ideas",
+  alt: "Keeps by Opeyemi Thompson, a collection of posts, articles, videos, and ideas",
 })
 
 export const alt = og.alt

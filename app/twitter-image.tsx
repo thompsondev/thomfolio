@@ -1,6 +1,6 @@
 import { renderOgImage } from "@/lib/og-image"
 
-export const alt = "daaysorn by Tomiwa David, Founder, Designer, and Builder"
+export const alt = "daaysorn by Opeyemi Thompson, Founder, Designer, and Builder"
 export const size = {
   width: 1200,
   height: 630,

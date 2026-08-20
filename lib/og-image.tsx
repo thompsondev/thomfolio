@@ -168,7 +168,7 @@ function EditorialDark({ portrait }: { portrait: string }) {
             color: palette.muted,
           }}
         >
-          Tomiwa David&nbsp;&nbsp;·&nbsp;&nbsp;Lagos, Nigeria
+          Opeyemi Thompson&nbsp;&nbsp;·&nbsp;&nbsp;Lagos, Nigeria
         </div>
       </div>
       <div
@@ -418,7 +418,7 @@ function LightSwiss({ portrait }: { portrait: string }) {
               fontFamily: "Geist",
             }}
           >
-            <span style={{ display: "flex", fontSize: 17 }}>Tomiwa David</span>
+            <span style={{ display: "flex", fontSize: 17 }}>Opeyemi Thompson</span>
             <span
               style={{
                 display: "flex",
@@ -601,7 +601,7 @@ function PageLightSwiss({
               color: "rgba(7,7,7,0.46)",
             }}
           >
-            Tomiwa David · Lagos, Nigeria
+            Opeyemi Thompson · Lagos, Nigeria
           </span>
         </div>
       </div>
@@ -696,7 +696,7 @@ function SplitContrast({ portrait }: { portrait: string }) {
           }}
         >
           <span style={{ display: "flex", fontSize: 27, fontWeight: 600 }}>
-            Tomiwa David
+            Opeyemi Thompson
           </span>
           <span
             style={{
@@ -845,7 +845,7 @@ function ProductConstellation({ portrait }: { portrait: string }) {
             marginTop: 23,
           }}
         >
-          Tomiwa David
+          Opeyemi Thompson
         </span>
         <span
           style={{

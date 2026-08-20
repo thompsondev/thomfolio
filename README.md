@@ -1,9 +1,9 @@
 <div align="center">
   <a href="https://daaysorn.com">
-    <img src="./public/images/logo.png" width="124" alt="Tomiwa David Memoji" />
+    <img src="./public/images/logo.png" width="124" alt="Opeyemi Thompson Memoji" />
   </a>
 
-# Tomiwa David
+# Opeyemi Thompson
 
 **Founder · Designer · Builder**
 
@@ -27,7 +27,7 @@ I shape brands, build products, and connect the details that make them feel whol
     <img src="https://api.iconify.design/ph:x-logo-fill.svg?color=%23888888" width="22" alt="X" />
   </a>
   &nbsp;&nbsp;&nbsp;
-  <a href="mailto:david@daaysorn.com" title="Email">
+  <a href="mailto:topeyemi33@gmail.com" title="Email">
     <img src="https://api.iconify.design/ph:envelope-simple-fill.svg?color=%23888888" width="22" alt="Email" />
   </a>
 </div>
@@ -50,7 +50,7 @@ I use it to keep products thoughtful, consistent, and easy to use. I have also m
 
 ### ☕ Let us make something meaningful
 
-Have a brand to shape or a product worth making? [Send me a note](mailto:david@daaysorn.com).
+Have a brand to shape or a product worth making? [Send me a note](mailto:topeyemi33@gmail.com).
 
 <br />
 

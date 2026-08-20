@@ -3,19 +3,19 @@ const siteUrl =
 
 export const siteConfig = {
   name: "daaysorn",
-  title: "daaysorn | Tomiwa David",
+  title: "daaysorn | Opeyemi Thompson",
   description:
-    "daaysorn is the home of Tomiwa David, a founder, designer, and builder creating thoughtful brands and useful products across digital and physical spaces.",
+    "daaysorn is the home of Opeyemi Thompson, a founder, designer, and builder creating thoughtful brands and useful products across digital and physical spaces.",
   url: siteUrl,
   locale: "en_NG",
   creator: {
-    name: "Tomiwa David",
+    name: "Opeyemi Thompson",
     handle: "@daaysorn",
-    email: "david@daaysorn.com",
+    email: "topeyemi33@gmail.com",
   },
   keywords: [
     "daaysorn",
-    "Tomiwa David",
+    "Opeyemi Thompson",
     "founder",
     "designer",
     "product designer",

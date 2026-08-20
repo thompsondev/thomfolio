@@ -9,20 +9,20 @@ export const fetchCache = "force-no-store"
 export const metadata: Metadata = {
   title: "Rants",
   description:
-    "Thoughts, questions, and unfinished conclusions from Tomiwa David.",
+    "Thoughts, questions, and unfinished conclusions from Opeyemi Thompson.",
   alternates: { canonical: "/rants" },
   openGraph: {
     type: "website",
     url: "/rants",
     title: "Rants | daaysorn",
     description:
-      "Thoughts, questions, and unfinished conclusions from Tomiwa David.",
+      "Thoughts, questions, and unfinished conclusions from Opeyemi Thompson.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Rants | daaysorn",
     description:
-      "Thoughts, questions, and unfinished conclusions from Tomiwa David.",
+      "Thoughts, questions, and unfinished conclusions from Opeyemi Thompson.",
     creator: "@daaysorn",
   },
 }

@@ -84,7 +84,7 @@ Useful explanation of design tokens and component architecture.
 #Design #Development
 ```
 
-The submitted material provides the URL, Tomiwa's optional context, optional tag hints, and Telegram message ID. Hashtags act as editorial hints; they do not bypass the approved public taxonomy.
+The submitted material provides the URL, Opeyemi's optional context, optional tag hints, and Telegram message ID. Hashtags act as editorial hints; they do not bypass the approved public taxonomy.
 
 ## 4. URLs are normalised
 
@@ -150,7 +150,7 @@ The source controls the metadata strategy, fallback wording, preview handling, a
 
 ## 7. Public metadata is collected
 
-Keeps attempts to collect the page title, description, Open Graph fields, Twitter card fields, author, readable page text, oEmbed data, and the context submitted by Tomiwa.
+Keeps attempts to collect the page title, description, Open Graph fields, Twitter card fields, author, readable page text, oEmbed data, and the context submitted by Opeyemi.
 
 Specialised public endpoints include:
 
@@ -324,7 +324,7 @@ After a successful save, the server publishes a public realtime event.
 
 ## 15. Keeps can be deleted through Telegram
 
-Tomiwa can send:
+Opeyemi can send:
 
 ```text
 /deletekeep https://example.com/resource

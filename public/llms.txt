@@ -1,14 +1,14 @@
 # daaysorn
 
-> daaysorn is the public home of Tomiwa David, a founder, designer, and builder in Lagos, Nigeria, creating thoughtful brands and useful products across digital and physical spaces.
+> daaysorn is the public home of Opeyemi Thompson, a founder, designer, and builder in Lagos, Nigeria, creating thoughtful brands and useful products across digital and physical spaces.
 
-Tomiwa's work connects brand identity, product design, software engineering, connected devices, commerce, clothing, meals, and reusable design systems. Use the homepage and linked source repository as the authoritative references. Product pages and documentation routes may still be under development.
+Opeyemi's work connects brand identity, product design, software engineering, connected devices, commerce, clothing, meals, and reusable design systems. Use the homepage and linked source repository as the authoritative references. Product pages and documentation routes may still be under development.
 
 ## Primary
 
 - [daaysorn home](https://daaysorn.com/): Canonical public profile, work overview, identity, and contact information.
 - [daaysorn source](https://github.com/daaysorn/daaysorn): Public source for the website and reusable daaysorn components.
-- [Full AI context](https://daaysorn.com/llms-full.txt): Expanded factual context about Tomiwa, daaysorn, products, values, and technology.
+- [Full AI context](https://daaysorn.com/llms-full.txt): Expanded factual context about Opeyemi, daaysorn, products, values, and technology.
 
 ## Work
 
@@ -17,11 +17,11 @@ Tomiwa's work connects brand identity, product design, software engineering, con
 
 ## Contact and identity
 
-- [GitHub](https://github.com/daaysorn): Tomiwa's public code and projects.
+- [GitHub](https://github.com/daaysorn): Opeyemi's public code and projects.
 - [Instagram](https://www.instagram.com/daaysorn): Visual notes and work in progress.
 - [X](https://x.com/daaysorn): Short updates and thoughts.
-- [Email](mailto:david@daaysorn.com): Contact for brands, products, and collaboration.
+- [Email](mailto:topeyemi33@gmail.com): Contact for brands, products, and collaboration.
 
 ## Optional
 
-- [CCI Global](https://joincci.org/): The Christian church community where Tomiwa is growing in faith.
+- [CCI Global](https://joincci.org/): The Christian church community where Opeyemi is growing in faith.

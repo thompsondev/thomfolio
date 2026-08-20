@@ -5,7 +5,7 @@ const og = createPageOgImage({
   description: "Moments from my life, work, and everything in between.",
   path: "/gallery",
   labels: ["Life", "Work", "Design", "Moments"],
-  alt: "Gallery by Tomiwa David, moments from life, work, and everything in between",
+  alt: "Gallery by Opeyemi Thompson, moments from life, work, and everything in between",
 })
 
 export const alt = og.alt

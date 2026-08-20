@@ -204,7 +204,7 @@ const HomeView = () => {
   return (
     <article className="min-w-0 pb-8 md:pb-32">
       <h1 className="text-3xl leading-none font-bold tracking-tight xs:text-4xl md:text-3xl">
-        Tomiwa David
+        Opeyemi Thompson
       </h1>
 
       <div className="mt-8 min-w-0 text-base leading-8 text-muted-foreground md:mt-7 md:text-lg md:leading-9">
@@ -219,7 +219,7 @@ const HomeView = () => {
         >
           <Image
             src="/images/logo.png"
-            alt="Tomiwa David"
+            alt="Opeyemi Thompson"
             fill
             priority
             sizes="(min-width: 768px) 11rem, (min-width: 360px) 9rem, 8rem"

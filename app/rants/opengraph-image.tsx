@@ -5,7 +5,7 @@ const og = createPageOgImage({
   description: "Thoughts, questions, and unfinished conclusions.",
   path: "/rants",
   labels: ["Design", "Faith", "Building", "Life"],
-  alt: "Rants by Tomiwa David",
+  alt: "Rants by Opeyemi Thompson",
 })
 
 export const alt = og.alt
