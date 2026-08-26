@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 import { siteConfig } from "@/lib/seo"
 
 const googleAnalyticsId =
-  process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID?.trim() || "G-MXTGTBLTY4"
+  process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID?.trim() || "G-GWV6JGSL90"
 
 export const viewport: Viewport = {
   width: "device-width",

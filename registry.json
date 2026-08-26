@@ -11,39 +11,39 @@
       "dependencies": ["swr", "react-icons", "radix-ui"],
       "files": [
         {
-          "path": "components/Thoughtful-cmp/spotify/now-playing.tsx",
+          "path": "components/thoughtful-cmp/spotify/now-playing.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/spotify/now-playing-widget.tsx",
+          "path": "components/thoughtful-cmp/spotify/now-playing-widget.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/spotify/providers.tsx",
+          "path": "components/thoughtful-cmp/spotify/providers.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/spotify/types.ts",
+          "path": "components/thoughtful-cmp/spotify/types.ts",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/spotify/index.ts",
+          "path": "components/thoughtful-cmp/spotify/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/spotify/server.ts",
+          "path": "components/thoughtful-cmp/spotify/server.ts",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/spotify/auth.ts",
+          "path": "components/thoughtful-cmp/spotify/auth.ts",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/spotify/ui/hover-card.tsx",
+          "path": "components/thoughtful-cmp/spotify/ui/hover-card.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/spotify/ui/dialog.tsx",
+          "path": "components/thoughtful-cmp/spotify/ui/dialog.tsx",
           "type": "registry:component"
         },
         {
@@ -107,15 +107,15 @@
       "dependencies": [],
       "files": [
         {
-          "path": "components/Thoughtful-cmp/flipclock/flip-clock.tsx",
+          "path": "components/thoughtful-cmp/flipclock/flip-clock.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/flipclock/flip-unit.tsx",
+          "path": "components/thoughtful-cmp/flipclock/flip-unit.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/Thoughtful-cmp/flipclock/index.ts",
+          "path": "components/thoughtful-cmp/flipclock/index.ts",
           "type": "registry:component"
         }
       ],
