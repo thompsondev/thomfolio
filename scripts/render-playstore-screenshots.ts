@@ -62,14 +62,14 @@ async function makeWide(variant: "a" | "b") {
     </linearGradient>
   </defs>
   <rect width="1280" height="140" fill="url(#g)"/>
-  <text x="64" y="78" font-size="34" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Roboto">daaysorn</text>
+  <text x="64" y="78" font-size="34" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Roboto">Thoughtful</text>
   <text x="64" y="112" font-size="18" fill="rgba(255,255,255,0.72)" font-family="system-ui, -apple-system, Segoe UI, Roboto">Keeps · Gallery · Rants</text>
 </svg>`
         )
       : Buffer.from(
           `<svg width="1280" height="140">
   <rect width="1280" height="140" fill="#000000"/>
-  <text x="64" y="88" font-size="30" fill="rgba(255,255,255,0.9)" font-family="system-ui, -apple-system, Segoe UI, Roboto">daaysorn</text>
+  <text x="64" y="88" font-size="30" fill="rgba(255,255,255,0.9)" font-family="system-ui, -apple-system, Segoe UI, Roboto">Thoughtful</text>
 </svg>`
         )
 
@@ -134,14 +134,14 @@ async function makeNarrow(variant: "a" | "b") {
     </linearGradient>
   </defs>
   <rect width="390" height="120" fill="url(#g)"/>
-  <text x="28" y="68" font-size="24" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Roboto">daaysorn</text>
+  <text x="28" y="68" font-size="24" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Roboto">Thoughtful</text>
   <text x="28" y="98" font-size="14" fill="rgba(255,255,255,0.72)" font-family="system-ui, -apple-system, Segoe UI, Roboto">In your pocket</text>
 </svg>`
         )
       : Buffer.from(
           `<svg width="390" height="120">
   <rect width="390" height="120" fill="#000000"/>
-  <text x="28" y="74" font-size="22" fill="rgba(255,255,255,0.9)" font-family="system-ui, -apple-system, Segoe UI, Roboto">daaysorn</text>
+  <text x="28" y="74" font-size="22" fill="rgba(255,255,255,0.9)" font-family="system-ui, -apple-system, Segoe UI, Roboto">Thoughtful</text>
 </svg>`
         )
 

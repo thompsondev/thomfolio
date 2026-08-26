@@ -18,7 +18,7 @@ type InstallPromptEvent = Event & {
 }
 
 type InstallWindow = Window & {
-  __daaysornInstallPrompt?: InstallPromptEvent | null
+  __ThoughtfulInstallPrompt?: InstallPromptEvent | null
 }
 
 function isInstalled() {
@@ -48,7 +48,7 @@ export function PWAInstallPrompt() {
 
   const readInstallPrompt = useCallback(() => {
     if (isInstalled()) return
-    const prompt = (window as InstallWindow).__daaysornInstallPrompt
+    const prompt = (window as InstallWindow).__ThoughtfulInstallPrompt
     if (prompt) setInstallPrompt(prompt)
   }, [])
 
@@ -66,13 +66,13 @@ export function PWAInstallPrompt() {
       setInstallPrompt(null)
       setShowIosInstall(false)
     }
-    window.addEventListener("daaysorn:installable", readInstallPrompt)
-    window.addEventListener("daaysorn:installed", installed)
+    window.addEventListener("Thoughtful:installable", readInstallPrompt)
+    window.addEventListener("Thoughtful:installed", installed)
     window.addEventListener("appinstalled", installed)
 
     return () => {
-      window.removeEventListener("daaysorn:installable", readInstallPrompt)
-      window.removeEventListener("daaysorn:installed", installed)
+      window.removeEventListener("Thoughtful:installable", readInstallPrompt)
+      window.removeEventListener("Thoughtful:installed", installed)
       window.removeEventListener("appinstalled", installed)
     }
   }, [readInstallPrompt])
@@ -97,7 +97,7 @@ export function PWAInstallPrompt() {
         platform: "chromium",
       })
     } finally {
-      ;(window as InstallWindow).__daaysornInstallPrompt = null
+      ;(window as InstallWindow).__ThoughtfulInstallPrompt = null
       setInstallPrompt(null)
     }
   }
@@ -107,7 +107,7 @@ export function PWAInstallPrompt() {
   return (
     <aside
       role="status"
-      aria-label="Install daaysorn"
+      aria-label="Install Thoughtful"
       className="fixed inset-x-4 bottom-[calc(max(1rem,env(safe-area-inset-bottom))+5.5rem)] z-[70] mx-auto flex max-w-sm items-center gap-3 rounded-2xl border border-border bg-popover/88 p-3 text-popover-foreground shadow-2xl backdrop-blur-2xl md:bottom-20"
     >
       <span className="relative size-9 shrink-0 overflow-hidden rounded-xl bg-muted">
@@ -120,7 +120,7 @@ export function PWAInstallPrompt() {
         />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="font-heading text-sm font-semibold">Install daaysorn</p>
+        <p className="font-heading text-sm font-semibold">Install Thoughtful</p>
         {showIosInstall && showIosSteps ? (
           <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
             Tap <PiShareFatFill className="inline text-primary" aria-hidden />{" "}
@@ -132,7 +132,7 @@ export function PWAInstallPrompt() {
           </p>
         ) : (
           <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
-            Keep daaysorn close, even when you&apos;re offline.
+            Keep Thoughtful close, even when you&apos;re offline.
           </p>
         )}
       </div>

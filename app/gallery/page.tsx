@@ -14,16 +14,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/gallery",
-    title: "Gallery | daaysorn",
+    title: "Gallery | Thoughtful",
     description:
       "A visual collection of moments from Opeyemi Thompson's life and work.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gallery | daaysorn",
+    title: "Gallery | Thoughtful",
     description:
       "A visual collection of moments from Opeyemi Thompson's life and work.",
-    creator: "@daaysorn",
+    creator: "@Thoughtful",
   },
 }
 

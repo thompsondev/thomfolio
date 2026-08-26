@@ -1,38 +1,38 @@
 {
   "products": [
     {
-      "key": "tech",
-      "label": "Software and Engineering",
+      "key": "software",
+      "label": "Software & Engineering",
       "href": "/software-and-engineering",
-      "description": "Software, tools, and engineering work made to solve real problems."
+      "description": "Production web applications, APIs, backend services, developer tools, and scalable frontend systems."
+    },
+    {
+      "key": "ai",
+      "label": "AI & Automation",
+      "href": "/ai-and-automation",
+      "description": "AI-powered products, LLM integrations, workflow automation, intelligent tools, and experiments around making software more capable."
+    },
+    {
+      "key": "fintech",
+      "label": "Fintech",
+      "href": "/fintech",
+      "description": "Payment systems, financial platforms, transaction workflows, device financing, KYC-related systems, and products designed around financial operations."
+    },
+    {
+      "key": "saas",
+      "label": "SaaS & Digital Products",
+      "href": "/saas-and-digital-products",
+      "description": "Products that help businesses automate processes, manage operations, and serve their customers better."
     },
     {
       "key": "ecommerce",
-      "label": "Ecommerce",
+      "label": "E-commerce",
       "href": "/ecommerce",
-      "description": "Simple shopping experiences for products people care about."
-    },
-    {
-      "key": "energy",
-      "label": "Internet of Things",
-      "href": "/internet-of-things",
-      "description": "Connected devices and thoughtful systems for the physical world."
-    },
-    {
-      "key": "wears",
-      "label": "Clothing",
-      "href": "/clothing",
-      "description": "Clothing shaped by comfort, character, and everyday life."
-    },
-    {
-      "key": "food",
-      "label": "Meals",
-      "href": "/meals",
-      "description": "Food ideas and experiences made for sharing."
+      "description": "Product platforms, catalog systems, enrichment workflows, SEO systems, and tools for managing large product inventories."
     }
   ],
   "brand": {
-    "label": "daaysorn",
+    "label": "Thoughtful",
     "href": "/"
   },
   "documentation": {
@@ -60,7 +60,7 @@
     }
   },
   "account": {
-    "createHref": "https://account.daaysorn.com"
+    "createHref": "https://account.Thoughtful.com"
   },
   "faith": {
     "label": "CCI Global",
@@ -77,12 +77,14 @@
     "href": "mailto:topeyemi33@gmail.com"
   },
   "code": {
-    "profileHref": "https://github.com/daaysorn",
-    "repositoryHref": "https://github.com/daaysorn/daaysorn",
-    "componentsHref": "https://github.com/daaysorn/daaysorn/tree/main/components/daaysorn-cmp"
+    "profileHref": "https://github.com/thompsondev",
+    "repositoryHref": "https://github.com/thompsondev/thomfolio",
+    "componentsHref": "https://github.com/thompsondev/thomfolio/tree/main/components/thomfolio-cmp"
   },
   "social": {
-    "instagramHref": "https://www.instagram.com/daaysorn",
-    "xHref": "https://x.com/daaysorn"
+    "instagramHref": "https://www.instagram.com/holy1thompson",
+    "xHref": "https://x.com/holy1thompson",
+    "linkedinHref": "https://www.linkedin.com/in/opeyemi-thompson",
+    "mediumHref": ""
   }
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "daaysorn",
-  "homepage": "https://daaysorn.com",
+  "name": "Thoughtful",
+  "homepage": "https://Thoughtful.com",
   "items": [
     {
       "name": "spotify-now-playing",
@@ -11,39 +11,39 @@
       "dependencies": ["swr", "react-icons", "radix-ui"],
       "files": [
         {
-          "path": "components/daaysorn-cmp/spotify/now-playing.tsx",
+          "path": "components/Thoughtful-cmp/spotify/now-playing.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/spotify/now-playing-widget.tsx",
+          "path": "components/Thoughtful-cmp/spotify/now-playing-widget.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/spotify/providers.tsx",
+          "path": "components/Thoughtful-cmp/spotify/providers.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/spotify/types.ts",
+          "path": "components/Thoughtful-cmp/spotify/types.ts",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/spotify/index.ts",
+          "path": "components/Thoughtful-cmp/spotify/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/spotify/server.ts",
+          "path": "components/Thoughtful-cmp/spotify/server.ts",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/spotify/auth.ts",
+          "path": "components/Thoughtful-cmp/spotify/auth.ts",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/spotify/ui/hover-card.tsx",
+          "path": "components/Thoughtful-cmp/spotify/ui/hover-card.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/spotify/ui/dialog.tsx",
+          "path": "components/Thoughtful-cmp/spotify/ui/dialog.tsx",
           "type": "registry:component"
         },
         {
@@ -107,15 +107,15 @@
       "dependencies": [],
       "files": [
         {
-          "path": "components/daaysorn-cmp/flipclock/flip-clock.tsx",
+          "path": "components/Thoughtful-cmp/flipclock/flip-clock.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/flipclock/flip-unit.tsx",
+          "path": "components/Thoughtful-cmp/flipclock/flip-unit.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/daaysorn-cmp/flipclock/index.ts",
+          "path": "components/Thoughtful-cmp/flipclock/index.ts",
           "type": "registry:component"
         }
       ],

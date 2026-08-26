@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     canonical: "/",
     types: {
       "text/markdown": [
-        { url: "/llms.txt", title: "daaysorn AI overview" },
-        { url: "/llms-full.txt", title: "daaysorn full AI context" },
+        { url: "/llms.txt", title: "Thoughtful AI overview" },
+        { url: "/llms-full.txt", title: "Thoughtful full AI context" },
       ],
     },
   },

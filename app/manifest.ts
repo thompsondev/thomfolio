@@ -2,11 +2,11 @@ import type { MetadataRoute } from "next"
 
 import { siteConfig } from "@/lib/seo"
 
-type DaaysornManifest = MetadataRoute.Manifest & {
+type ThoughtfulManifest = MetadataRoute.Manifest & {
   edge_side_panel: { preferred_width: number }
 }
 
-export default function manifest(): DaaysornManifest {
+export default function manifest(): ThoughtfulManifest {
   return {
     id: "/",
     name: siteConfig.name,
@@ -45,14 +45,14 @@ export default function manifest(): DaaysornManifest {
         sizes: "1280x720",
         type: "image/png",
         form_factor: "wide",
-        label: "daaysorn preview (wide)",
+        label: "Thoughtful preview (wide)",
       },
       {
         src: "/screenshots/playstore-narrow-gradient.png",
         sizes: "390x844",
         type: "image/png",
         form_factor: "narrow",
-        label: "daaysorn preview (narrow)",
+        label: "Thoughtful preview (narrow)",
       },
     ],
     icons: [
@@ -80,7 +80,7 @@ export default function manifest(): DaaysornManifest {
       {
         name: "Gallery",
         short_name: "Gallery",
-        description: "Open the daaysorn Gallery.",
+        description: "Open the Thoughtful Gallery.",
         url: "/gallery",
         icons: [{ src: "/icons/pwa-96.png", sizes: "96x96" }],
       },

@@ -33,7 +33,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: rant.title,
       description: rant.seoDescription,
-      creator: "@daaysorn",
+      creator: "@Thoughtful",
     },
   }
 }

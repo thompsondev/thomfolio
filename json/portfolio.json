@@ -1,0 +1,457 @@
+{
+  "focusAreas": [
+    {
+      "key": "software",
+      "slug": "software-and-engineering",
+      "label": "Software & Engineering",
+      "tagline": "Reliable systems, clear interfaces, and code that ships.",
+      "description": "Production web applications, APIs, backend services, developer tools, and scalable frontend systems.",
+      "summary": "I design and build software end to end — from the interface people touch to the services and data that keep it running. The goal is always the same: products that feel simple because the complexity underneath is well understood.",
+      "whatIDo": [
+        "Production web apps with React, Next.js, and TypeScript",
+        "REST APIs and backend services with Node.js and NestJS",
+        "Data models and persistence with PostgreSQL and MongoDB",
+        "Deployment, Docker, and cloud-ready infrastructure on AWS",
+        "Developer tooling, documentation, and maintainable architecture"
+      ],
+      "outcomes": [
+        "Shipped production systems used in real business workflows",
+        "Built APIs and frontends that stay fast as usage grows",
+        "Turned ambiguous product ideas into clear technical delivery"
+      ]
+    },
+    {
+      "key": "ai",
+      "slug": "ai-and-automation",
+      "label": "AI & Automation",
+      "tagline": "Useful intelligence — not demos for their own sake.",
+      "description": "AI-powered products, LLM integrations, workflow automation, intelligent tools, and experiments around making software more capable.",
+      "summary": "I connect AI models to real products and automate work that used to take hours. That means grounding models in product context, designing reliable workflows, and measuring whether the system actually helps people.",
+      "whatIDo": [
+        "LLM integrations and AI product features",
+        "Workflow automation that replaces repetitive manual work",
+        "Prompting, evaluation, and human-in-the-loop review flows",
+        "Content enrichment, classification, and generation pipelines",
+        "Experiments that graduate into production when they prove useful"
+      ],
+      "outcomes": [
+        "AI products used by 100+ users",
+        "Automation that removes repetitive discovery and content work",
+        "Practical integrations teams can operate day to day"
+      ]
+    },
+    {
+      "key": "fintech",
+      "slug": "fintech",
+      "label": "Fintech",
+      "tagline": "Financial software that has to be correct and trustworthy.",
+      "description": "Payment systems, financial platforms, transaction workflows, device financing, KYC-related systems, and products designed around financial operations.",
+      "summary": "Fintech work demands clarity, auditability, and careful product thinking. I build flows around payments, applications, verification, and financial operations where mistakes are expensive and trust is everything.",
+      "whatIDo": [
+        "Payment and transaction workflows",
+        "Application and underwriting-adjacent product flows",
+        "KYC-related experiences and verification journeys",
+        "Device financing and financial operations tooling",
+        "Secure, reliable APIs for money-adjacent systems"
+      ],
+      "outcomes": [
+        "Platforms processing 1,000+ monthly applications",
+        "Financial workflows designed for clarity and control",
+        "Products that support real revenue-generating operations"
+      ]
+    },
+    {
+      "key": "saas",
+      "slug": "saas-and-digital-products",
+      "label": "SaaS & Digital Products",
+      "tagline": "Products businesses return to every day.",
+      "description": "Products that help businesses automate processes, manage operations, and serve their customers better.",
+      "summary": "I build SaaS and digital products around recurring work: onboarding, operations, customer workflows, and the quiet systems that make a business feel organised. Good SaaS is opinionated enough to help, flexible enough to last.",
+      "whatIDo": [
+        "Multi-tenant product thinking and core SaaS workflows",
+        "Dashboards, settings, and operational interfaces",
+        "Subscription-ready product foundations",
+        "Internal tools that become customer-facing products",
+        "Product loops from MVP to something people depend on"
+      ],
+      "outcomes": [
+        "Products generating $50k+ in revenue",
+        "Tools that reduce operational overhead for teams",
+        "Interfaces that stay understandable as features grow"
+      ]
+    },
+    {
+      "key": "ecommerce",
+      "slug": "ecommerce",
+      "label": "E-commerce",
+      "tagline": "Catalogs, discovery, and commerce that scale.",
+      "description": "Product platforms, catalog systems, enrichment workflows, SEO systems, and tools for managing large product inventories.",
+      "summary": "E-commerce is a systems problem as much as a storefront problem. I work on catalogs, enrichment, SEO, and product platforms where thousands of SKUs need to stay accurate, findable, and sellable.",
+      "whatIDo": [
+        "Product catalog and inventory systems",
+        "Content and metadata enrichment workflows",
+        "SEO-oriented product and category structures",
+        "Storefronts and merchant-facing tools",
+        "Automation around large product datasets"
+      ],
+      "outcomes": [
+        "E-commerce systems involving 10,000+ products",
+        "Enrichment workflows that keep catalogs useful at scale",
+        "Commerce experiences that stay fast and understandable"
+      ]
+    }
+  ],
+  "industries": [
+    {
+      "slug": "fintech-and-financial-services",
+      "label": "Fintech & Financial Services",
+      "tagline": "Payments, lending, compliance-aware product work.",
+      "description": "Open to collaborating on payment platforms, financial operations, application workflows, and customer experiences where accuracy and trust matter.",
+      "summary": "I have built and contributed to fintech and financial-service products — including application-heavy platforms and transaction workflows. I am comfortable working in environments where compliance, clarity, and reliability shape every product decision.",
+      "howIHelp": [
+        "Design and ship financial product flows end to end",
+        "Improve application, verification, and operations tooling",
+        "Integrate payment and financial APIs into usable products",
+        "Reduce friction without sacrificing control or auditability"
+      ]
+    },
+    {
+      "slug": "healthcare",
+      "label": "Healthcare & Wellness",
+      "tagline": "Careful software for people and providers.",
+      "description": "Open to collaborating on healthcare, wellness, and care-delivery products that need clear UX, reliable systems, and thoughtful data handling.",
+      "summary": "Healthcare products succeed when they respect complexity without dumping it on the user. I am interested in building interfaces, workflows, and integrations that help clinics, patients, and operators move faster with fewer mistakes.",
+      "howIHelp": [
+        "Build clear operational and patient-facing workflows",
+        "Connect systems through reliable APIs and automation",
+        "Improve product usability for high-stakes daily work",
+        "Prototype and validate features before heavy investment"
+      ]
+    },
+    {
+      "slug": "education",
+      "label": "Education & EdTech",
+      "tagline": "Learning products that stay simple to use.",
+      "description": "Open to collaborating on education platforms, learning tools, and products that help students, teachers, or institutions work better.",
+      "summary": "EdTech needs clarity more than novelty. I like building learning and operations products that are easy to adopt, resilient in real classrooms or cohorts, and grounded in how people actually teach and learn.",
+      "howIHelp": [
+        "Ship learning and admin experiences that feel approachable",
+        "Automate repetitive content and operations work",
+        "Build APIs and dashboards for program delivery",
+        "Turn early education ideas into usable MVPs"
+      ]
+    },
+    {
+      "slug": "retail-and-ecommerce",
+      "label": "Retail & E-commerce",
+      "tagline": "Catalogs, merchandising, and buying experiences.",
+      "description": "Open to collaborating on retail and e-commerce systems — from storefronts to catalog enrichment and inventory tooling.",
+      "summary": "I have worked with large product catalogs and commerce workflows. I am open to helping retailers and commerce teams improve discovery, enrichment, SEO, and the systems behind selling at scale.",
+      "howIHelp": [
+        "Improve product catalogs and enrichment pipelines",
+        "Build merchant tools and customer-facing commerce UX",
+        "Strengthen SEO and product information architecture",
+        "Automate inventory and content operations"
+      ]
+    },
+    {
+      "slug": "saas-and-b2b",
+      "label": "SaaS & B2B",
+      "tagline": "Software teams use every week.",
+      "description": "Open to collaborating on B2B SaaS products that automate operations, serve customers, or help teams run their business.",
+      "summary": "B2B products have to earn a place in someone’s day. I help shape and build SaaS foundations, workflows, and interfaces that stay useful after the demo — especially when the problem is operational and recurring.",
+      "howIHelp": [
+        "Define and build core SaaS product loops",
+        "Design admin, settings, and customer workflows",
+        "Integrate third-party tools and internal systems",
+        "Move from MVP to a product teams rely on"
+      ]
+    },
+    {
+      "slug": "logistics",
+      "label": "Logistics & Supply Chain",
+      "tagline": "Operational software for moving things reliably.",
+      "description": "Open to collaborating on logistics, fulfilment, and supply-chain products where status, timing, and coordination matter.",
+      "summary": "Logistics software is about visibility and dependable workflows. I am interested in building tracking, operations, and coordination tools that help teams know what is happening and what to do next.",
+      "howIHelp": [
+        "Build operational dashboards and status workflows",
+        "Automate handoffs between people and systems",
+        "Design APIs for partners and internal tools",
+        "Prototype solutions around real fulfilment bottlenecks"
+      ]
+    },
+    {
+      "slug": "media",
+      "label": "Media & Content",
+      "tagline": "Publishing, discovery, and content systems.",
+      "description": "Open to collaborating on media, publishing, and content products — from creation workflows to distribution and discovery.",
+      "summary": "Content systems need structure as much as creativity. I can help build tools for publishing, enrichment, curation, and discovery — including AI-assisted workflows that keep humans in control.",
+      "howIHelp": [
+        "Build publishing and editorial tooling",
+        "Create enrichment and recommendation-adjacent workflows",
+        "Improve content discovery and information architecture",
+        "Integrate AI where it saves real editorial time"
+      ]
+    },
+    {
+      "slug": "energy-and-climate",
+      "label": "Energy & Climate",
+      "tagline": "Software for physical and environmental systems.",
+      "description": "Open to collaborating on energy, climate, and infrastructure-adjacent products that need solid engineering and clear product thinking.",
+      "summary": "Energy and climate products often sit between physical systems and digital interfaces. I am open to helping teams turn sensor data, operations, and sustainability goals into software people can actually use.",
+      "howIHelp": [
+        "Build dashboards and operational interfaces",
+        "Connect hardware-adjacent data into useful products",
+        "Ship reliable APIs and automation around field workflows",
+        "Shape MVPs for climate and energy experiments"
+      ]
+    },
+    {
+      "slug": "civic-tech",
+      "label": "Government & Civic Tech",
+      "tagline": "Public-interest software that stays usable.",
+      "description": "Open to collaborating on civic, government, and public-interest products that need accessibility, clarity, and dependable delivery.",
+      "summary": "Civic products serve people who did not choose complexity. I care about building services that are understandable, resilient, and respectful of the people who depend on them.",
+      "howIHelp": [
+        "Design clear public-facing and staff workflows",
+        "Build secure, maintainable service backends",
+        "Improve forms, status tracking, and case-style journeys",
+        "Deliver iteratively with strong documentation"
+      ]
+    },
+    {
+      "slug": "startups",
+      "label": "Startups & Early-stage",
+      "tagline": "From idea to something people can use.",
+      "description": "Open to collaborating with founders and early teams who need a technical partner to turn an idea into a working product.",
+      "summary": "Early-stage work is where product intuition and engineering meet. I help founders scope the smallest useful version, build it, put it in front of people, and learn quickly without overbuilding.",
+      "howIHelp": [
+        "Scope and ship MVPs that answer a real question",
+        "Build full-stack products without a large engineering team",
+        "Set up foundations that can grow after validation",
+        "Advise on technical trade-offs while staying hands-on"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "zokulabs",
+      "role": "Chief of Staff & AI Automation Engineer",
+      "org": "Zokulabs",
+      "location": "Los Angeles, USA · Remote",
+      "period": "Mar 2026 – Present",
+      "summary": "Designing and shipping AI-powered products, automation systems, and operational tooling across the Zokulabs portfolio — while coordinating execution with the Founder & CEO across subsidiaries.",
+      "highlights": [
+        "Coordinated and launched Snapblock, an AI website builder that attracted 100+ users and generated $50K+ in revenue within 2 months",
+        "Built an AI content generation system for TechDepot that enriched 10,000+ products for category and SEO quality",
+        "Led cross-functional coordination across subsidiaries — tracking deliverables, resolving bottlenecks, and keeping initiatives on schedule",
+        "Partnered with the Founder & CEO on strategic priorities, KPIs, and operational alignment across portfolio companies",
+        "Integrated CRMs, email, databases, finance tools, calendars, and third-party APIs into unified operational workflows",
+        "Built internal dashboards and reporting systems for performance, productivity, and decision-making visibility"
+      ]
+    },
+    {
+      "id": "sapphire",
+      "role": "Frontend Engineering Lead",
+      "org": "Sapphire Virtual Network",
+      "location": "Lagos, Nigeria · Hybrid",
+      "period": "Jan 2025 – Apr 2026",
+      "summary": "Led frontend and product delivery for a device-financing platform handling real applications, eligibility workflows, and loan operations at scale.",
+      "highlights": [
+        "Led delivery of a device financing platform processing 1,000+ monthly applications, cutting approval turnaround by 40%",
+        "Drove AI-assisted risk profiling and eligibility scoring for real-time decision support and less manual review",
+        "Owned eligibility and application journeys end to end, reducing drop-offs by 25% and improving completion rates",
+        "Designed an internal loan management system that improved operational monitoring efficiency by 30%",
+        "Aligned product, operations, and engineering around scalable, reliable platform performance"
+      ]
+    },
+    {
+      "id": "hostandrest",
+      "role": "AI & Automation Engineer",
+      "org": "HostandRest",
+      "location": "Lagos, Nigeria · Remote",
+      "period": "Jul 2024 – Dec 2024",
+      "summary": "Built conversational AI and automation systems that turn natural-language requests into real infrastructure and DevOps workflows.",
+      "highlights": [
+        "Deployed an AI infrastructure provisioning system that lets users manage cloud environments through WhatsApp",
+        "Built LangChain orchestration services that convert natural-language prompts into structured infrastructure commands",
+        "Integrated Claude, Gemini, and Grok for multimodal reasoning, plus Higgsfield for AI video in onboarding flows",
+        "Implemented LLM routing and fallbacks with the Vercel AI SDK and Vercel AI Gateway for cost-aware model selection",
+        "Automated DevOps workflows with n8n and Make.com for provisioning, DNS, SSL, containers, and monitoring"
+      ]
+    },
+    {
+      "id": "intech",
+      "role": "Product Lead – Frontend Engineer",
+      "org": "Intech Management Limited",
+      "location": "Lagos, Nigeria · Remote",
+      "period": "Jan 2022 – Jun 2024",
+      "summary": "Led frontend engineering across multiple fintech products — payments, merchant tools, and commerce — designed for large-scale adoption.",
+      "highlights": [
+        "Led frontend across Inpay App, Intech Checkout, Inpay for Business, and Incommerce",
+        "Delivered cohesive UI/UX with architecture aimed at 2M+ projected users",
+        "Built web and mobile experiences with React, TypeScript, Redux, and React Native",
+        "Architected reusable component systems and efficient state management",
+        "Improved performance by ~40% through code-splitting, lazy loading, and caching",
+        "Integrated secure payment APIs and merchant dashboards",
+        "Implemented CI/CD, linting, and testing with 90%+ coverage"
+      ]
+    },
+    {
+      "id": "talku-talku",
+      "role": "Frontend Engineer (Website Solutions Specialist)",
+      "org": "Talku Talku",
+      "location": "Abuja, Nigeria · Remote",
+      "period": "Jul 2020 – Dec 2021",
+      "summary": "Delivered high-performance marketing and commerce websites for clients, with a focus on speed, SEO, and conversion.",
+      "highlights": [
+        "Improved site performance by up to 55% faster load times and stronger SEO visibility",
+        "Built a restaurant online ordering system that helped increase client sales by 40%",
+        "Fixed performance and security issues, reducing downtime by 20%",
+        "Worked with designers to turn business goals into responsive production experiences"
+      ]
+    },
+    {
+      "id": "just-inches",
+      "role": "Web Developer",
+      "org": "Just Inches Limited",
+      "location": "Lagos, Nigeria · Remote",
+      "period": "Apr 2018 – Jun 2020",
+      "summary": "Built brand-consistent client websites and improved engagement through responsive design, audits, and polish.",
+      "highlights": [
+        "Developed brand-aligned websites for multiple clients",
+        "Implemented responsive layouts, animations, and cross-device experiences",
+        "Ran performance, accessibility, and security audits and shipped improvements"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "storytime-nigeria",
+      "name": "Storytime Nigeria",
+      "role": "Full-stack Engineer",
+      "summary": "A storytelling platform with publishing workflows, AI-assisted discovery, and admin tooling for creators and readers.",
+      "highlights": [
+        "Designed platform architecture with NestJS, TypeORM, and PostgreSQL — auth, RBAC, moderation, and publishing pipelines",
+        "Built the frontend with Next.js, Tailwind CSS, and TypeScript for speed, SEO, and responsive navigation",
+        "Added AI-driven recommendations, automated tagging/classification, and personalised story surfacing",
+        "Created admin and analytics dashboards for review, featuring, engagement, and creator performance"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "rgu-msc",
+      "credential": "MSc Information Technology with Business Intelligence",
+      "school": "Robert Gordon University, Aberdeen, UK",
+      "period": "2026 – 2027",
+      "status": "Current"
+    },
+    {
+      "id": "tansian-btech",
+      "credential": "B.Tech, Computer Science",
+      "school": "Tansian University, Umunya, Anambra, Nigeria",
+      "period": "2023 – 2024",
+      "status": "Completed"
+    },
+    {
+      "id": "laspotech-hnd",
+      "credential": "HND, Computer Science",
+      "school": "Lagos State Polytechnic, Ikorodu, Nigeria",
+      "period": "2019 – 2022",
+      "status": "Completed"
+    },
+    {
+      "id": "laspotech-nd",
+      "credential": "ND, Computer Science",
+      "school": "Lagos State Polytechnic, Ikorodu, Nigeria",
+      "period": "2014 – 2016",
+      "status": "Completed"
+    },
+    {
+      "id": "nysc",
+      "credential": "NYSC Certificate",
+      "school": "National Youth Service Corps, Nigeria",
+      "period": "2022 – 2023",
+      "status": "Completed"
+    },
+    {
+      "id": "wassce",
+      "credential": "WASSCE",
+      "school": "Secondary education, Nigeria",
+      "period": "2014",
+      "status": "Completed"
+    }
+  ],
+  "skills": {
+    "languages": ["TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Golang"],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "React Native",
+      "Tailwind CSS",
+      "Redux",
+      "Design systems",
+      "Accessibility",
+      "Performance optimisation"
+    ],
+    "backend": [
+      "Node.js",
+      "NestJS",
+      "TypeORM",
+      "Prisma",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "REST",
+      "GraphQL",
+      "WebSockets",
+      "tRPC"
+    ],
+    "cloud": [
+      "Docker",
+      "AWS (S3, Lambda basics)",
+      "Vercel",
+      "Netlify",
+      "Firebase",
+      "Railway",
+      "Coolify",
+      "CI/CD",
+      "Git",
+      "GitHub",
+      "Bitbucket"
+    ],
+    "ai": [
+      "LangChain",
+      "Vercel AI SDK",
+      "n8n",
+      "Make.com",
+      "Claude",
+      "Gemini",
+      "Grok",
+      "ElevenLabs",
+      "Higgsfield"
+    ],
+    "testing": [
+      "Jest",
+      "Cypress",
+      "Vitest",
+      "React Testing Library",
+      "Supertest"
+    ],
+    "product": [
+      "Frontend architecture",
+      "Technical leadership",
+      "Product thinking",
+      "Mentoring",
+      "Agile delivery",
+      "Stakeholder collaboration"
+    ]
+  },
+  "collaborate": {
+    "headline": "Open to collaborate",
+    "intro": "I am open to collaborating with teams and founders across industries — especially where software, AI, automation, or product craft can remove real friction.",
+    "cta": "If you are building something ambitious in any of these spaces, let's talk."
+  }
+}

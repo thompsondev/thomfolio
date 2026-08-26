@@ -1,10 +1,10 @@
-# How daaysorn Keeps works
+# How Thoughtful Keeps works
 
-daaysorn Keeps is a curated content pipeline for collecting useful links, enriching them with structured metadata, publishing them to a public feed, and allowing visitors to save favourites across devices.
+Thoughtful Keeps is a curated content pipeline for collecting useful links, enriching them with structured metadata, publishing them to a public feed, and allowing visitors to save favourites across devices.
 
-- Public page: [daaysorn.com/keeps](https://daaysorn.com/keeps)
-- Source repository: [github.com/daaysorn/daaysorn](https://github.com/daaysorn/daaysorn)
-- Dependency list: [package.json](https://github.com/daaysorn/daaysorn/blob/main/package.json)
+- Public page: [Thoughtful.com/keeps](https://Thoughtful.com/keeps)
+- Source repository: [github.com/Thoughtful/Thoughtful](https://github.com/Thoughtful/Thoughtful)
+- Dependency list: [package.json](https://github.com/Thoughtful/Thoughtful/blob/main/package.json)
 
 ## Technology stack
 
@@ -24,12 +24,12 @@ Keeps uses:
 - Service Worker, Cache Storage, and IndexedDB for PWA and offline support
 - Tailwind CSS, shadcn-based components, and react-icons for the interface
 
-## 1. Telegram is connected to daaysorn
+## 1. Telegram is connected to Thoughtful
 
 The Telegram Bot API sends updates to:
 
 ```text
-https://daaysorn.com/api/telegram/keeps
+https://Thoughtful.com/api/telegram/keeps
 ```
 
 The webhook is registered with:
@@ -42,8 +42,8 @@ The setup script reads `TELEGRAM_BOT_TOKEN`, `TELEGRAM_WEBHOOK_SECRET`, and `NEX
 
 Implementation:
 
-- [Webhook registration script](https://github.com/daaysorn/daaysorn/blob/main/scripts/set-telegram-keeps-webhook.ts)
-- [Telegram webhook route](https://github.com/daaysorn/daaysorn/blob/main/app/api/telegram/keeps/route.ts)
+- [Webhook registration script](https://github.com/Thoughtful/Thoughtful/blob/main/scripts/set-telegram-keeps-webhook.ts)
+- [Telegram webhook route](https://github.com/Thoughtful/Thoughtful/blob/main/app/api/telegram/keeps/route.ts)
 
 The main Keeps commands are:
 
@@ -114,7 +114,7 @@ becomes:
 https://youtube.com/watch?v=VIDEO_ID
 ```
 
-Implementation: [URL normalisation](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/url.ts)
+Implementation: [URL normalisation](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/url.ts)
 
 ## 5. The URL passes security checks
 
@@ -122,7 +122,7 @@ Before fetching a page, Keeps confirms that the URL uses HTTP or HTTPS. DNS reso
 
 Redirects are checked and limited. These controls reduce Server-Side Request Forgery risk and prevent submitted links from reaching internal services.
 
-Implementation: [Keeps enrichment pipeline](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/enrich.ts)
+Implementation: [Keeps enrichment pipeline](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/enrich.ts)
 
 ## 6. The source platform is identified
 
@@ -228,8 +228,8 @@ If a source has no useful image, Keeps can call an external screenshot service c
 
 Implementation:
 
-- [Files SDK + R2 setup](https://github.com/daaysorn/daaysorn/blob/main/lib/files.ts)
-- [Preview storage](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/preview-storage.ts)
+- [Files SDK + R2 setup](https://github.com/Thoughtful/Thoughtful/blob/main/lib/files.ts)
+- [Preview storage](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/preview-storage.ts)
 
 ## 10. Cencori generates editorial metadata
 
@@ -247,7 +247,7 @@ Current defaults are `gpt-4.1-nano` for generation and vision analysis and `gpt-
 
 The generator is instructed to write natural English, use evidence-supported claims, limit the summary to two sentences, remove hashtags, avoid emojis in titles, and avoid generic promotional language.
 
-Implementation: [AI generation and review](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/enrich.ts)
+Implementation: [AI generation and review](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/enrich.ts)
 
 ## 11. Tags use a controlled taxonomy
 
@@ -273,7 +273,7 @@ Technology
 Travel
 ```
 
-Implementation: [Keeps metadata rules](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/metadata.ts)
+Implementation: [Keeps metadata rules](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/metadata.ts)
 
 ## 12. A second AI pass reviews the result
 
@@ -312,9 +312,9 @@ The database connection is configured with `DATABASE_URL`.
 
 Implementation:
 
-- [Keeps database](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/db.ts)
-- [Keeps types](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/types.ts)
-- [Database migration script](https://github.com/daaysorn/daaysorn/blob/main/scripts/migrate-database.ts)
+- [Keeps database](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/db.ts)
+- [Keeps types](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/types.ts)
+- [Database migration script](https://github.com/Thoughtful/Thoughtful/blob/main/scripts/migrate-database.ts)
 
 ## 14. Telegram receives the processing result
 
@@ -337,30 +337,30 @@ The command can also reply to the original link message. The URL is normalised b
 Public page:
 
 ```text
-https://daaysorn.com/keeps
+https://Thoughtful.com/keeps
 ```
 
 The Next.js page is force-dynamic and bypasses stale server caching. It reads up to 100 Keeps from Neon, orders them by `saved_at DESC`, formats dates in the `Africa/Lagos` timezone, and server-renders the initial collection.
 
 Implementation:
 
-- [Keeps page](https://github.com/daaysorn/daaysorn/blob/main/app/keeps/page.tsx)
-- [Keeps interface](https://github.com/daaysorn/daaysorn/blob/main/components/keeps/keeps-view.tsx)
-- [Keeps loading state](https://github.com/daaysorn/daaysorn/blob/main/components/keeps/keeps-skeleton.tsx)
+- [Keeps page](https://github.com/Thoughtful/Thoughtful/blob/main/app/keeps/page.tsx)
+- [Keeps interface](https://github.com/Thoughtful/Thoughtful/blob/main/components/keeps/keeps-view.tsx)
+- [Keeps loading state](https://github.com/Thoughtful/Thoughtful/blob/main/components/keeps/keeps-skeleton.tsx)
 
 ## 17. SWR keeps browser data fresh
 
 The browser reads:
 
 ```text
-GET https://daaysorn.com/api/keeps
+GET https://Thoughtful.com/api/keeps
 ```
 
 SWR uses the server-rendered collection as fallback data, refreshes every ten minutes, and revalidates when the browser regains focus or reconnects.
 
 The API responds with `Cache-Control: no-store, max-age=0`. If the database is unavailable, it returns `503` with an empty collection.
 
-Implementation: [Public Keeps API](https://github.com/daaysorn/daaysorn/blob/main/app/api/keeps/route.ts)
+Implementation: [Public Keeps API](https://github.com/Thoughtful/Thoughtful/blob/main/app/api/keeps/route.ts)
 
 ## 18. Ably provides realtime public updates
 
@@ -380,9 +380,9 @@ When a Keep is added or deleted, the server publishes a `changed` event. Connect
 
 Implementation:
 
-- [Realtime helpers](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/realtime.ts)
-- [Public realtime token route](https://github.com/daaysorn/daaysorn/blob/main/app/api/keeps/public-realtime-token/route.ts)
-- [Private realtime token route](https://github.com/daaysorn/daaysorn/blob/main/app/api/keeps/realtime-token/route.ts)
+- [Realtime helpers](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/realtime.ts)
+- [Public realtime token route](https://github.com/Thoughtful/Thoughtful/blob/main/app/api/keeps/public-realtime-token/route.ts)
+- [Private realtime token route](https://github.com/Thoughtful/Thoughtful/blob/main/app/api/keeps/realtime-token/route.ts)
 
 ## 19. The feed supports discovery, filters, and search
 
@@ -412,12 +412,12 @@ Supported devices use the Web Share API. Other devices fall back to the Clipboar
 Visitors do not need an account. Favourite IDs are stored under:
 
 ```text
-daaysorn-keeps-favourites
+Thoughtful-keeps-favourites
 ```
 
 Saving or removing a Keep updates React state, local storage, the Saved Keeps count, and the Saved Keeps filter immediately.
 
-Implementation: [Device-sync helpers](https://github.com/daaysorn/daaysorn/blob/main/lib/device-sync.ts)
+Implementation: [Device-sync helpers](https://github.com/Thoughtful/Thoughtful/blob/main/lib/device-sync.ts)
 
 ## 22. Saved Keeps can be exported to other devices
 
@@ -430,15 +430,15 @@ POST /api/keeps/sync
 The server creates a UUID group ID, a 32-byte random secret, and an anonymous display name. The resulting private URL follows this structure:
 
 ```text
-https://daaysorn.com/keeps#keeps-sync={group-id}.{secret}
+https://Thoughtful.com/keeps#keeps-sync={group-id}.{secret}
 ```
 
 Only a SHA-256 hash of the secret is stored in Neon. Opening the private URL on another device connects it to the same Saved Keeps collection.
 
 Implementation:
 
-- [Sync API](https://github.com/daaysorn/daaysorn/blob/main/app/api/keeps/sync/route.ts)
-- [Sync database](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/sync-db.ts)
+- [Sync API](https://github.com/Thoughtful/Thoughtful/blob/main/app/api/keeps/sync/route.ts)
+- [Sync database](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/sync-db.ts)
 
 ## 23. Changes synchronise between devices
 
@@ -469,31 +469,31 @@ Other connected devices receive the event and retrieve the authoritative saved-I
 When a connected device is offline, the pending operation is placed in IndexedDB by the service worker.
 
 ```text
-Database: daaysorn-keeps-sync
+Database: Thoughtful-keeps-sync
 Store: outbox
-Sync tag: daaysorn-sync-saved-keeps
+Sync tag: Thoughtful-sync-saved-keeps
 ```
 
-When connectivity returns, the service worker retries `/api/keeps/sync`, deletes accepted outbox entries, and notifies open daaysorn windows with the updated saved IDs.
+When connectivity returns, the service worker retries `/api/keeps/sync`, deletes accepted outbox entries, and notifies open Thoughtful windows with the updated saved IDs.
 
-Implementation: [Service worker](https://github.com/daaysorn/daaysorn/blob/main/public/sw.js)
+Implementation: [Service worker](https://github.com/Thoughtful/Thoughtful/blob/main/public/sw.js)
 
-## 25. daaysorn is installable as a PWA
+## 25. Thoughtful is installable as a PWA
 
 Manifest URL:
 
 ```text
-https://daaysorn.com/manifest.webmanifest
+https://Thoughtful.com/manifest.webmanifest
 ```
 
 The manifest supplies standalone display, app icons, install screenshots, Keeps and Gallery shortcuts, and an operating-system share target.
 
 Implementation:
 
-- [Web app manifest](https://github.com/daaysorn/daaysorn/blob/main/app/manifest.ts)
-- [Service worker registration](https://github.com/daaysorn/daaysorn/blob/main/components/pwa-register.tsx)
-- [Install prompt](https://github.com/daaysorn/daaysorn/blob/main/components/pwa-install-prompt.tsx)
-- [Offline page](https://github.com/daaysorn/daaysorn/blob/main/app/offline/page.tsx)
+- [Web app manifest](https://github.com/Thoughtful/Thoughtful/blob/main/app/manifest.ts)
+- [Service worker registration](https://github.com/Thoughtful/Thoughtful/blob/main/components/pwa-register.tsx)
+- [Install prompt](https://github.com/Thoughtful/Thoughtful/blob/main/components/pwa-install-prompt.tsx)
+- [Offline page](https://github.com/Thoughtful/Thoughtful/blob/main/app/offline/page.tsx)
 
 ## 26. Other apps can share existing Keeps
 
@@ -511,7 +511,7 @@ The operating system can submit a title, text, and URL. The route encodes the pa
 
 The browser decodes and normalises the URL, finds a matching public Keep, saves it locally, and opens Saved Keeps. This path saves an existing public Keep; Telegram remains the owner-controlled publication path.
 
-Implementation: [Share-target route](https://github.com/daaysorn/daaysorn/blob/main/app/api/keeps/share-target/route.ts)
+Implementation: [Share-target route](https://github.com/Thoughtful/Thoughtful/blob/main/app/api/keeps/share-target/route.ts)
 
 ## 27. Google Analytics records product activity
 
@@ -533,7 +533,7 @@ keep_preview_error
 
 Private sync secrets and private connection URLs are not included in these event parameters.
 
-Implementation: [Analytics helpers](https://github.com/daaysorn/daaysorn/blob/main/lib/analytics.ts)
+Implementation: [Analytics helpers](https://github.com/Thoughtful/Thoughtful/blob/main/lib/analytics.ts)
 
 ## Complete architecture flow
 
@@ -577,15 +577,15 @@ Service Worker and IndexedDB offline recovery
 
 ## Main implementation links
 
-- [Keeps page](https://github.com/daaysorn/daaysorn/blob/main/app/keeps/page.tsx)
-- [Keeps interface](https://github.com/daaysorn/daaysorn/blob/main/components/keeps/keeps-view.tsx)
-- [Telegram webhook](https://github.com/daaysorn/daaysorn/blob/main/app/api/telegram/keeps/route.ts)
-- [Enrichment pipeline](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/enrich.ts)
-- [URL normalisation](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/url.ts)
-- [Keeps database](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/db.ts)
-- [Preview storage](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/preview-storage.ts)
-- [Realtime integration](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/realtime.ts)
-- [Sync API](https://github.com/daaysorn/daaysorn/blob/main/app/api/keeps/sync/route.ts)
-- [Sync database](https://github.com/daaysorn/daaysorn/blob/main/lib/keeps/sync-db.ts)
-- [PWA manifest](https://github.com/daaysorn/daaysorn/blob/main/app/manifest.ts)
-- [Service worker](https://github.com/daaysorn/daaysorn/blob/main/public/sw.js)
+- [Keeps page](https://github.com/Thoughtful/Thoughtful/blob/main/app/keeps/page.tsx)
+- [Keeps interface](https://github.com/Thoughtful/Thoughtful/blob/main/components/keeps/keeps-view.tsx)
+- [Telegram webhook](https://github.com/Thoughtful/Thoughtful/blob/main/app/api/telegram/keeps/route.ts)
+- [Enrichment pipeline](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/enrich.ts)
+- [URL normalisation](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/url.ts)
+- [Keeps database](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/db.ts)
+- [Preview storage](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/preview-storage.ts)
+- [Realtime integration](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/realtime.ts)
+- [Sync API](https://github.com/Thoughtful/Thoughtful/blob/main/app/api/keeps/sync/route.ts)
+- [Sync database](https://github.com/Thoughtful/Thoughtful/blob/main/lib/keeps/sync-db.ts)
+- [PWA manifest](https://github.com/Thoughtful/Thoughtful/blob/main/app/manifest.ts)
+- [Service worker](https://github.com/Thoughtful/Thoughtful/blob/main/public/sw.js)

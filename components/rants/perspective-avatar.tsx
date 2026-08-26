@@ -7,7 +7,7 @@ export function PerspectiveAvatar({
   seed: string
   className?: string
 }) {
-  const source = `/api/rants/avatar?v=2&seed=${encodeURIComponent(seed || "daaysorn-reader")}`
+  const source = `/api/rants/avatar?v=2&seed=${encodeURIComponent(seed || "Thoughtful-reader")}`
 
   return (
     <span

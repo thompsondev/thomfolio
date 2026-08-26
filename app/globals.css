@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
-  Daaysorn breakpoint scale (mobile-first, rem-based).
+  Thoughtful breakpoint scale (mobile-first, rem-based).
   Must live in a plain @theme block (not @theme inline) so Tailwind
   generates watch:/xs:/… variants correctly and sorts them by size.
 

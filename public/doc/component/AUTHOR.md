@@ -1,4 +1,4 @@
-# Author Guide — the daaysorn component registry
+# Author Guide — the Thoughtful component registry
 
 > This is **for you (the maintainer)**, not for people installing your
 > components. Consumer-facing docs live in
@@ -30,7 +30,7 @@ registry.json         ← you edit this (source of truth: which files ship)
 public/r/*.json       ← generated; each file's source is INLINED as a snapshot
       │  deploy
       ▼
-https://daaysorn.com/r/<name>.json   ← what `shadcn add` fetches
+https://Thoughtful.com/r/<name>.json   ← what `shadcn add` fetches
 ```
 
 **The one rule that bites people:** `public/r/*.json` is a _snapshot_. If you
@@ -45,11 +45,11 @@ old code. The build script does this automatically (see [Build](#build--deploy))
 | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `registry.json`                      | **Source of truth.** Lists each item and the files it ships, plus deps / cssVars / css / envVars. Edit this to change what's published.               |
 | `public/r/*.json`                    | **Generated** by `shadcn build`. One file per item + `registry.json` (the index). Committed & deployed; don't hand-edit.                              |
-| `components/daaysorn-cmp/<feature>/` | **Self-contained** component source. Everything it needs lives here: client components, its own `ui/` primitives, `server.ts`, `auth.ts`, `types.ts`. |
+| `components/Thoughtful-cmp/<feature>/` | **Self-contained** component source. Everything it needs lives here: client components, its own `ui/` primitives, `server.ts`, `auth.ts`, `types.ts`. |
 | `app/api/**`                         | Thin route-handler **shims** — Next.js requires route files under `app/`, so these are one-liners that re-export logic from the feature folder.       |
 | `components/ui/*`, `lib/utils.ts`    | Pre-existing app scaffolding (button, tooltip, `cn`). Not shipped by components — consumers already have `cn` from shadcn init.                       |
 | `app/globals.css`                    | Where `@utility` / `@keyframes` / theme tokens live in _this_ app. The registry re-injects equivalents on install via the item's `css` / `cssVars`.   |
-| `components.json`                    | shadcn config. Its `registries` map lets `@daaysorn/<name>` resolve to your URL.                                                                      |
+| `components.json`                    | shadcn config. Its `registries` map lets `@Thoughtful/<name>` resolve to your URL.                                                                      |
 | `public/doc/component/*`             | These docs.                                                                                                                                           |
 
 ---
@@ -60,7 +60,7 @@ Each entry in `registry.json` → one installable component. Anatomy:
 
 ```jsonc
 {
-  "name": "flip-clock",              // → /r/flip-clock.json, and @daaysorn/flip-clock
+  "name": "flip-clock",              // → /r/flip-clock.json, and @Thoughtful/flip-clock
   "type": "registry:block",          // a multi-file feature
   "title": "Flip Clock",
   "description": "...",
@@ -68,9 +68,9 @@ Each entry in `registry.json` → one installable component. Anatomy:
   "registryDependencies": [],        // OTHER registry items to pull first (bare = shadcn's)
   "files": [
     // Ship everything inside the feature folder as registry:component
-    { "path": "components/daaysorn-cmp/spotify/now-playing.tsx", "type": "registry:component" },
-    { "path": "components/daaysorn-cmp/spotify/server.ts",       "type": "registry:component" },
-    { "path": "components/daaysorn-cmp/spotify/ui/dialog.tsx",   "type": "registry:component" },
+    { "path": "components/Thoughtful-cmp/spotify/now-playing.tsx", "type": "registry:component" },
+    { "path": "components/Thoughtful-cmp/spotify/server.ts",       "type": "registry:component" },
+    { "path": "components/Thoughtful-cmp/spotify/ui/dialog.tsx",   "type": "registry:component" },
     // Route handlers must live under app/ → thin shim with an exact target
     { "path": "app/api/now-playing/route.ts", "type": "registry:file",
       "target": "app/api/now-playing/route.ts" }
@@ -85,7 +85,7 @@ Each entry in `registry.json` → one installable component. Anatomy:
 
 | type                 | Destination                                                         | Use for                                                                                      |
 | -------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `registry:component` | components alias (path preserved, e.g. `components/daaysorn-cmp/…`) | **Everything in the feature folder** — components, its `ui/*`, `server.ts`, `auth.ts`, types |
+| `registry:component` | components alias (path preserved, e.g. `components/Thoughtful-cmp/…`) | **Everything in the feature folder** — components, its `ui/*`, `server.ts`, `auth.ts`, types |
 | `registry:ui`        | ui alias (`components/ui/…`)                                        | shadcn default for primitives — **we don't use it** (see convention below)                   |
 | `registry:lib`       | lib alias (`lib/…`)                                                 | shadcn default for helpers — **we don't use it** (helpers go in the folder)                  |
 | `registry:hook`      | hooks alias                                                         | Hooks (if ever shared app-wide)                                                              |
@@ -93,7 +93,7 @@ Each entry in `registry.json` → one installable component. Anatomy:
 
 > **Self-contained convention.** Everything a component needs is shipped as
 > `registry:component` files **inside its own folder** — including its `ui/`
-> primitives (`components/daaysorn-cmp/<feature>/ui/*`) and any `server.ts` /
+> primitives (`components/Thoughtful-cmp/<feature>/ui/*`) and any `server.ts` /
 > `auth.ts`. This keeps installs from touching the consumer's `components/ui/`
 > or `lib/`, and avoids clobbering their existing shadcn primitives. Use
 > **relative imports** within the folder (`./ui/dialog`, `./server`) so the
@@ -126,7 +126,7 @@ field powers _installs_.
 
 End-to-end checklist. Say you're adding `foo-widget`.
 
-1. **Build it in the app** under `components/daaysorn-cmp/foo/`. Use semantic tokens
+1. **Build it in the app** under `components/Thoughtful-cmp/foo/`. Use semantic tokens
    only (see the design-system skill), `cn()` for classes, and put any
    keyframes/utilities in `app/globals.css`. Wire it somewhere (e.g. the footer)
    and get it working + typechecking.
@@ -146,8 +146,8 @@ End-to-end checklist. Say you're adding `foo-widget`.
 6. **Write the doc**: `public/doc/component/foo-widget.md` (usage, props, setup,
    customization) and add it to the items list in `componentInstall.md`.
 7. **Commit** `registry.json`, `public/r/*`, the component files, and docs.
-8. **Deploy.** Now `https://daaysorn.com/r/foo-widget.json` is live and
-   `@daaysorn/foo-widget` resolves.
+8. **Deploy.** Now `https://Thoughtful.com/r/foo-widget.json` is live and
+   `@Thoughtful/foo-widget` resolves.
 
 ---
 
@@ -186,7 +186,7 @@ Existing installs are copies in other people's repos — they won't auto-update.
 - `bun run build` regenerates the registry, then builds Next.js. On Vercel (bun
   detected from `bun.lock`) this runs on every deploy, so the published registry
   is always in sync with `main`.
-- The JSON files are static assets in `public/`, so `https://daaysorn.com/r/x.json`
+- The JSON files are static assets in `public/`, so `https://Thoughtful.com/r/x.json`
   just works once deployed. **They only go live after you deploy** — locally
   they're at `http://localhost:3000/r/x.json`.
 
@@ -222,7 +222,7 @@ ideas. It is not a product for visitors to save their own links. Telegram is the
 private publishing input; `/keeps` is the public reading surface.
 
 Visitors can bookmark Opeyemi's Keeps with the save icon. The selected Keep IDs
-live only in `localStorage` under `daaysorn-keeps-favourites`; no visitor data is
+live only in `localStorage` under `Thoughtful-keeps-favourites`; no visitor data is
 written to Postgres until the visitor chooses **Export to other devices**.
 **Saved Keeps** switches the collection to the visitor's saved items. Exporting
 creates an anonymous private sync group in Postgres and a URL-fragment link that
@@ -276,13 +276,13 @@ Google's onboarding list contains optional marketing and identity features as
 well as basic analytics. Do not enable every row merely to make the checklist
 look complete.
 
-| Google task                 | daaysorn decision                                                                                                                                                                                  |
+| Google task                 | Thoughtful decision                                                                                                                                                                                  |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Set up data collection      | Implemented. The root layout loads `GoogleAnalytics` with `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID`. Confirm the production event in Realtime; Google's onboarding card may take up to 48 hours to update. |
 | Turn on Google signals      | Leave off for now. It enriches reporting with signed-in Google and ads-personalization data. Add a consent-management flow and update the privacy notice before enabling it.                       |
 | Create audiences            | Create the two reporting audiences below after events appear. They are for analysis, not advertising.                                                                                              |
 | Create custom insights      | Create the two anomaly alerts below after enough events have accumulated.                                                                                                                          |
-| Set up User-ID              | Not applicable. daaysorn has no signed-in user account. Never use a Saved Keeps collection ID, device ID, IP address, email, or other local identifier as GA User-ID.                              |
+| Set up User-ID              | Not applicable. Thoughtful has no signed-in user account. Never use a Saved Keeps collection ID, device ID, IP address, email, or other local identifier as GA User-ID.                              |
 | Set up user-provided data   | Not applicable. The site does not collect account email/phone data for analytics or advertising. Do not send Perspective names or content.                                                         |
 | Set up Measurement Protocol | Not needed. Visitor interactions happen in the browser through the Google tag. Telegram owner actions and server maintenance are not visitor conversions and should not pollute GA.                |
 
@@ -330,7 +330,7 @@ requires User-ID, Google signals, user-provided data, or Measurement Protocol.
 The site code already sends the events. Complete these steps in the Google
 Analytics property after deploying the latest site.
 
-1. Open `https://daaysorn.com/keeps` and trigger representative interactions:
+1. Open `https://Thoughtful.com/keeps` and trigger representative interactions:
    view the collection, open a Keep, save and remove one, search, select filters,
    share, and test the device export.
 2. In GA4, open **Reports → Realtime**.
@@ -504,7 +504,7 @@ and is safe to commit. `.env.local` is ignored by Git and stores local values.
 #### Enable Ably realtime Saved Keeps
 
 1. Create an Ably account and select the Free package.
-2. Create an app named `daaysorn Keeps`.
+2. Create an app named `Thoughtful Keeps`.
 3. Open the app's **API Keys** area and copy an API key whose capabilities allow
    publish and subscribe. The key stays server-side; browsers never receive it.
 4. Add it locally as `ABLY_API_KEY` in `.env.local`.
@@ -541,7 +541,7 @@ Realtime deployment checks:
 
 1. Open the verified `@BotFather` account in Telegram.
 2. Send `/newbot`.
-3. Choose a display name, such as `daaysorn Keeps`.
+3. Choose a display name, such as `Thoughtful Keeps`.
 4. Choose an available username ending in `bot`.
 5. Copy the bot token into `TELEGRAM_BOT_TOKEN` in `.env.local`.
 6. Treat the token like a password. Regenerate it through BotFather if exposed.
@@ -602,7 +602,7 @@ generate a new value and replace it locally and on Vercel.
 #### Connect the deployed webhook
 
 The production deployment must contain `/api/telegram/keeps`, and
-`NEXT_PUBLIC_SITE_URL` must be `https://daaysorn.com`.
+`NEXT_PUBLIC_SITE_URL` must be `https://Thoughtful.com`.
 
 After adding all environment values to Vercel and redeploying, run:
 
@@ -613,7 +613,7 @@ bun run telegram:webhook
 Expected output:
 
 ```text
-Telegram Keeps webhook set to https://daaysorn.com/api/telegram/keeps
+Telegram Keeps webhook set to https://Thoughtful.com/api/telegram/keeps
 ```
 
 Telegram will then send supported updates directly to the deployed API. The
@@ -650,7 +650,7 @@ passes `TELEGRAM_WEBHOOK_SECRET` as Telegram's `secret_token`.
 2. A successful background job replies with the number of saved links and lists
    each generated title. If only some links fail, the successful Keeps remain
    saved and the reply includes the failed count.
-3. Open `https://daaysorn.com/keeps`.
+3. Open `https://Thoughtful.com/keeps`.
 4. The public feed receives the change through its live event stream. A
    60-second SWR refresh remains as a fallback.
 
@@ -886,7 +886,7 @@ For a first production setup or any credential change:
    ```
 
 5. Send one test link to the bot and confirm the reply, the Vercel function log,
-   and the new card at `https://daaysorn.com/keeps`.
+   and the new card at `https://Thoughtful.com/keeps`.
 
 Rerun `bun run telegram:webhook` after changing the deployed webhook URL or its
 registered commands. Do not use `getUpdates` while a webhook is active; remove
@@ -1192,7 +1192,7 @@ upload.
 #### Cloudflare R2 setup
 
 Use an R2 Standard bucket and connect a production custom domain such as
-`images.daaysorn.com`. Do not use an `r2.dev` URL in production because it does
+`images.Thoughtful.com`. Do not use an `r2.dev` URL in production because it does
 not provide Cloudflare Cache, WAF, or the same production controls.
 
 Keep the bucket credentials server-side:
@@ -1201,8 +1201,8 @@ Keep the bucket credentials server-side:
 CLOUDFLARE_ACCOUNT_ID=
 R2_ACCESS_KEY_ID=
 R2_SECRET_ACCESS_KEY=
-R2_BUCKET_NAME=daaysorn-gallery
-R2_PUBLIC_BASE_URL=https://images.daaysorn.com
+R2_BUCKET_NAME=Thoughtful-gallery
+R2_PUBLIC_BASE_URL=https://images.Thoughtful.com
 ```
 
 Never prefix R2 credentials with `NEXT_PUBLIC_`. Only
@@ -1279,7 +1279,7 @@ Official references:
 
 Rants uses Telegram as the private authoring surface and PostgreSQL as the
 editorial source of truth. Public pages follow the Archive direction in the
-daaysorn design system: compact chronological rows at `/rants`, minimal article
+Thoughtful design system: compact chronological rows at `/rants`, minimal article
 pages at `/rants/[slug]`, and moderated Perspectives below each published Rant.
 
 ```text
@@ -1351,7 +1351,7 @@ cheaper catalog model without running the exact `generateObject` schemas;
 `gpt-5.4-nano` currently fails those requests through Cencori.
 
 Perspectives never collect email addresses. Keeps sync credentials are the
-shared anonymous daaysorn device identity: a Rants visitor adopts an existing
+shared anonymous Thoughtful device identity: a Rants visitor adopts an existing
 Keeps session, while a first Perspective creates the same session that Keeps
 will later use. The sync group stores one display name across connected
 devices. A supplied name becomes that profile; otherwise the server assigns a
@@ -1375,7 +1375,7 @@ Approved Perspectives and the composer use deterministic DiceBear `adventurer`
 avatars with pastel backgrounds, seeded by the persistent public name. This
 style has billions of combinations and remains legible at 32px in both themes,
 so identities are visually distinct while remaining consistent across Rants
-and synced devices. The browser loads the SVG through daaysorn's same-origin
+and synced devices. The browser loads the SVG through Thoughtful's same-origin
 avatar endpoint. The endpoint generates DiceBear locally and caches the result
 for 30 days, so live avatars do not depend on a request to DiceBear's external
 API. A deterministic initials avatar remains as a last-resort fallback. The
@@ -1404,7 +1404,7 @@ To obtain `RANTS_ADMIN_SYNC_ID`, open the deployed site on the device that owns
 the admin Keeps/Perspectives identity and run this in the browser console:
 
 ```js
-JSON.parse(localStorage.getItem("daaysorn-keeps-sync-session")).id
+JSON.parse(localStorage.getItem("Thoughtful-keeps-sync-session")).id
 ```
 
 This is JavaScript for the browser Developer Tools **Console**, not a zsh or Bun
@@ -1481,7 +1481,7 @@ receive a duplicate page-level back link.
 
 `public/sw.js` is a dependency-free service worker registered immediately in
 production by `components/pwa-register.tsx`. Development unregisters it and
-removes daaysorn caches so localhost never hides code changes behind stale PWA
+removes Thoughtful caches so localhost never hides code changes behind stale PWA
 responses.
 
 The worker provides only capabilities that match this project:
@@ -1514,12 +1514,12 @@ The worker provides only capabilities that match this project:
 - Saved Keeps changes remain in the page's local fallback queue and are also
   copied into a deduplicated IndexedDB outbox owned by the service worker when
   the device is offline or an immediate sync request fails. Supported browsers
-  register `daaysorn-sync-saved-keeps`; its Background Sync handler sends the
+  register `Thoughtful-sync-saved-keeps`; its Background Sync handler sends the
   authenticated changes after connectivity stabilizes, removes only the exact
   submitted versions, and notifies open Keeps tabs with the returned saved IDs.
 - After a connection loss, supported browsers also register
-  `daaysorn-refresh-offline-content` to refresh the cached static pages.
-- Supported browsers may register `daaysorn-daily-content-refresh` with a
+  `Thoughtful-refresh-offline-content` to refresh the cached static pages.
+- Supported browsers may register `Thoughtful-daily-content-refresh` with a
   one-day minimum interval. Its Periodic Sync handler refreshes cached Home and
   offline pages. Browser scheduling and permission remain
   discretionary.
@@ -1530,7 +1530,7 @@ The worker provides only capabilities that match this project:
 Do not add PWABuilder capabilities only to raise its score. Notes, push
 notifications, file handlers, protocol handlers, widgets, tabbed display,
 native-app relations, IARC metadata, and cross-domain scope extensions remain
-out until daaysorn has a real feature requiring them.
+out until Thoughtful has a real feature requiring them.
 
 ---
 
@@ -1540,13 +1540,13 @@ out until daaysorn has a real feature requiring them.
   The build script covers you; manual edits between deploys don't.
 - **Tailwind v4 only.** The `css` payloads use v4 `@utility` / `@theme` syntax.
 - **Semantic tokens only** in components (no raw hex) so installs adapt to any
-  theme. See the `daaysorn-design-system` skill.
+  theme. See the `Thoughtful-design-system` skill.
 - **Keep components self-contained.** Ship primitives, server logic, and helpers
   as `registry:component` files **inside the feature folder** (with relative
   imports), not to `components/ui/` or `lib/`. Route handlers are the only
   exception — thin `registry:file` shims under `app/`.
 - **Update the host URL.** Docs + `components.json` reference
-  `https://daaysorn.com` — that's your domain; keep it correct if it ever moves.
+  `https://Thoughtful.com` — that's your domain; keep it correct if it ever moves.
 - **Versioning is optional.** Registry URLs aren't versioned. If you need
   non-breaking updates later, serve `public/r/v2/…` and point new consumers
   there; add a `version` field per item.

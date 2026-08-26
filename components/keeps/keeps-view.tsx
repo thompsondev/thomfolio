@@ -400,7 +400,7 @@ type KeepsSyncChange = { keepId: string; saved: boolean }
 
 const favouritesKey = favouritesStorageKey
 const syncSessionKey = syncSessionStorageKey
-const pendingChangesKey = "daaysorn-keeps-sync-pending"
+const pendingChangesKey = "Thoughtful-keeps-sync-pending"
 
 function readStoredArray<T>(key: string): T[] {
   try {

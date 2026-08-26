@@ -1,9 +1,9 @@
-const CACHE_VERSION = "daaysorn-v7"
+const CACHE_VERSION = "Thoughtful-v7"
 const PAGE_CACHE = `${CACHE_VERSION}-pages`
 const ASSET_CACHE = `${CACHE_VERSION}-assets`
-const KEEPS_SYNC_DATABASE = "daaysorn-keeps-sync"
+const KEEPS_SYNC_DATABASE = "Thoughtful-keeps-sync"
 const KEEPS_SYNC_STORE = "outbox"
-const KEEPS_SYNC_TAG = "daaysorn-sync-saved-keeps"
+const KEEPS_SYNC_TAG = "Thoughtful-sync-saved-keeps"
 const OFFLINE_URL = "/offline"
 const REFRESH_URLS = ["/", OFFLINE_URL]
 const PRECACHE_URLS = [
@@ -49,7 +49,7 @@ self.addEventListener("activate", (event) => {
             keys
               .filter(
                 (key) =>
-                  key.startsWith("daaysorn-") &&
+                  key.startsWith("Thoughtful-") &&
                   key !== PAGE_CACHE &&
                   key !== ASSET_CACHE
               )
@@ -238,13 +238,13 @@ self.addEventListener("sync", (event) => {
     return
   }
 
-  if (event.tag === "daaysorn-refresh-offline-content") {
+  if (event.tag === "Thoughtful-refresh-offline-content") {
     event.waitUntil(refreshOfflinePages())
   }
 })
 
 self.addEventListener("periodicsync", (event) => {
-  if (event.tag === "daaysorn-daily-content-refresh") {
+  if (event.tag === "Thoughtful-daily-content-refresh") {
     event.waitUntil(refreshOfflinePages())
   }
 })

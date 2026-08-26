@@ -5,7 +5,7 @@ import { rateLimit } from "@/lib/rate-limit"
 
 describe("rateLimit", () => {
   test("allows requests through the configured limit", () => {
-    const request = new Request("https://daaysorn.com/api/test", {
+    const request = new Request("https://Thoughtful.com/api/test", {
       headers: { "x-forwarded-for": "203.0.113.10" },
     })
     const key = `test-allow-${crypto.randomUUID()}`
@@ -21,7 +21,7 @@ describe("rateLimit", () => {
   })
 
   test("rejects requests above the configured limit", () => {
-    const request = new Request("https://daaysorn.com/api/test", {
+    const request = new Request("https://Thoughtful.com/api/test", {
       headers: { "x-forwarded-for": "203.0.113.11" },
     })
     const key = `test-reject-${crypto.randomUUID()}`

@@ -1,8 +1,8 @@
 export type DeviceSyncSession = { id: string; secret: string }
 
-export const favouritesStorageKey = "daaysorn-keeps-favourites"
-export const syncSessionStorageKey = "daaysorn-keeps-sync-session"
-export const deviceNameStorageKey = "daaysorn-device-display-name"
+export const favouritesStorageKey = "Thoughtful-keeps-favourites"
+export const syncSessionStorageKey = "Thoughtful-keeps-sync-session"
+export const deviceNameStorageKey = "Thoughtful-device-display-name"
 
 export function readDeviceSyncSession(): DeviceSyncSession | null {
   try {

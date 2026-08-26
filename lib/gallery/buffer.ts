@@ -70,7 +70,7 @@ export async function publishGalleryMediaToInstagram(
               shouldShareToFeed: true,
             },
           },
-          source: "daaysorn-gallery",
+          source: "Thoughtful-gallery",
         },
       },
     }),

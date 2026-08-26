@@ -7,39 +7,27 @@ import { useTheme } from "next-themes"
 import type { IconType } from "react-icons"
 import { LuMoon, LuSun } from "react-icons/lu"
 import {
-  PiBracketsCurlyDuotone,
-  PiBowlFoodFill,
-  PiCoatHangerFill,
-  PiLightningFill,
-  PiShoppingCartSimpleFill,
+  PiBriefcaseFill,
+  PiBuildingsFill,
+  PiCubeFill,
+  PiGraduationCapFill,
+  PiStackFill,
 } from "react-icons/pi"
-import { RiHome5Fill, RiQuillPenFill } from "react-icons/ri"
+import { RiHome5Fill, RiImageFill } from "react-icons/ri"
 
 import { buttonVariants } from "@/components/ui/button"
 import { Dock, DockIcon } from "@/components/ui/dock"
 import links from "@/json/links.json"
 import { cn } from "@/lib/utils"
 
-const productIcons: Record<string, IconType> = {
-  tech: PiBracketsCurlyDuotone,
-  energy: PiLightningFill,
-  ecommerce: PiShoppingCartSimpleFill,
-  wears: PiCoatHangerFill,
-  food: PiBowlFoodFill,
-}
-
 const navItems: { href: string; icon: IconType; label: string }[] = [
   { href: "/", icon: RiHome5Fill, label: "Home" },
-  ...links.products.map((product) => ({
-    href: product.href,
-    icon: productIcons[product.key] ?? RiHome5Fill,
-    label: product.label,
-  })),
-  {
-    href: links.documentation.href,
-    icon: RiQuillPenFill,
-    label: links.documentation.label,
-  },
+  { href: "/experience", icon: PiBriefcaseFill, label: "Experience" },
+  { href: "/education", icon: PiGraduationCapFill, label: "Education" },
+  { href: "/skills", icon: PiStackFill, label: "Skills" },
+  { href: "/work", icon: PiCubeFill, label: "Work" },
+  { href: "/industries", icon: PiBuildingsFill, label: "Industries" },
+  { href: links.content.gallery.href, icon: RiImageFill, label: "Gallery" },
 ]
 
 const subscribeToHydration = () => () => undefined
@@ -93,7 +81,7 @@ type CountryInfo = {
   timezoneAbbr: string | null
 }
 
-const countryCacheKey = "daaysorn-country"
+const countryCacheKey = "Thoughtful-country"
 const countryCacheTtl = 24 * 60 * 60 * 1000
 
 /**

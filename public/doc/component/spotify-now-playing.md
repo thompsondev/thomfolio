@@ -18,18 +18,18 @@ static grey.
 
 ```bash
 # bun
-bunx shadcn@latest add https://daaysorn.com/r/spotify-now-playing.json
-bunx shadcn@latest add @daaysorn/spotify-now-playing   # if the namespace is configured
+bunx shadcn@latest add https://Thoughtful.com/r/spotify-now-playing.json
+bunx shadcn@latest add @Thoughtful/spotify-now-playing   # if the namespace is configured
 
 # npm
-npx shadcn@latest add https://daaysorn.com/r/spotify-now-playing.json
+npx shadcn@latest add https://Thoughtful.com/r/spotify-now-playing.json
 ```
 
 This copies a **self-contained folder** (plus 3 thin API route shims — Next.js
 requires route handlers to live under `app/`):
 
 ```
-components/daaysorn-cmp/spotify/
+components/Thoughtful-cmp/spotify/
 ├── now-playing.tsx          client component (the footer line)
 ├── now-playing-widget.tsx   the embed player card
 ├── providers.tsx            provider metadata (icons, brand colors, embeds)
@@ -59,7 +59,7 @@ Dependencies installed: `swr`, `react-icons`, `radix-ui`. CSS injected: the
 ## Usage
 
 ```tsx
-import { NowPlaying } from "@/components/daaysorn-cmp/spotify"
+import { NowPlaying } from "@/components/Thoughtful-cmp/spotify"
 
 export function Footer() {
   return (

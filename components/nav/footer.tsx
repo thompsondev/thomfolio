@@ -6,8 +6,7 @@ import type { IconType } from "react-icons"
 import { FaEnvelope, FaGithub } from "react-icons/fa6"
 import { RiInstagramFill, RiTwitterXLine } from "react-icons/ri"
 
-import { FlipClock } from "@/components/daaysorn-cmp/flipclock"
-import { NowPlaying } from "@/components/daaysorn-cmp/spotify"
+import { FlipClock } from "@/components/thoughtful-cmp/flipclock"
 import {
   Tooltip,
   TooltipContent,
@@ -68,14 +67,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/** now playing / last played (Spotify) */}
-      <div className="order-2 flex justify-center md:relative md:z-10 md:order-2 md:scale-90">
-        <NowPlaying />
-      </div>
-
       {/** social media */}
       <TooltipProvider delayDuration={150} skipDelayDuration={100}>
-        <div className="order-4 flex items-center justify-center gap-5 text-primary md:relative md:z-10 md:order-3 md:scale-90 md:gap-3">
+        <div className="order-2 flex items-center justify-center gap-5 text-primary md:relative md:z-10 md:order-2 md:scale-90 md:gap-3">
           {socialLinks.map(({ href, icon: Icon, label }) => (
             <Tooltip key={label}>
               <TooltipTrigger asChild>

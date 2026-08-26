@@ -54,7 +54,7 @@ export function parseGalleryPostInstructions(
   }
 }
 
-export const telegramBotHelp = `<b>daaysorn bot</b>
+export const telegramBotHelp = `<b>Thoughtful bot</b>
 Choose what you want to do.
 
 <b>📌 Keeps</b>

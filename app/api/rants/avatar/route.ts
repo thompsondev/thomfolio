@@ -46,7 +46,7 @@ export async function GET(request: Request) {
 
   const seed =
     new URL(request.url).searchParams.get("seed")?.trim().slice(0, 80) ||
-    "daaysorn-reader"
+    "Thoughtful-reader"
 
   try {
     return avatarResponse(

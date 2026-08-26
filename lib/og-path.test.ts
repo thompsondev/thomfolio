@@ -12,16 +12,16 @@ describe("normalizeAppPath", () => {
     expect(normalizeAppPath("privacy")).toBe("/privacy")
     expect(normalizeAppPath("/privacy/?x=1#top")).toBe("/privacy")
     expect(normalizeAppPath("/")).toBe("/")
-    expect(normalizeAppPath("https://daaysorn.com/terms")).toBe("/terms")
+    expect(normalizeAppPath("https://Thoughtful.com/terms")).toBe("/terms")
   })
 })
 
 describe("formatOgSitePath", () => {
   test("builds the site path shown on page OG art", () => {
-    expect(formatOgSitePath("/")).toBe("daaysorn.com")
-    expect(formatOgSitePath("/privacy")).toBe("daaysorn.com/privacy")
+    expect(formatOgSitePath("/")).toBe("Thoughtful.com")
+    expect(formatOgSitePath("/privacy")).toBe("Thoughtful.com/privacy")
     expect(formatOgSitePath("/rants/hello-world")).toBe(
-      "daaysorn.com/rants/hello-world"
+      "Thoughtful.com/rants/hello-world"
     )
   })
 })

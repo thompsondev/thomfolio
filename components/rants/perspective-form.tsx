@@ -195,7 +195,7 @@ export function PerspectiveForm({
 
   useEffect(() => {
     if (!siteKey || !hasBody || !turnstileRef.current) return
-    const scriptId = "daaysorn-turnstile-script"
+    const scriptId = "Thoughtful-turnstile-script"
     const scriptSource =
       "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
     let script = document.getElementById(scriptId) as HTMLScriptElement | null
@@ -242,7 +242,7 @@ export function PerspectiveForm({
       aria-label="Contribute a Perspective"
     >
       <div className="flex min-w-0 items-start gap-3">
-        <PerspectiveAvatar seed={displayName || "new daaysorn reader"} />
+        <PerspectiveAvatar seed={displayName || "new Thoughtful reader"} />
         {displayName ? (
           <p className="min-w-0 pt-1 text-sm">
             <span className="text-muted-foreground">Reply as </span>

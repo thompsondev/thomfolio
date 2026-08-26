@@ -130,16 +130,29 @@ export async function listGalleryMediaFresh(): Promise<GalleryMedia[]> {
   const sql = database()
   if (!sql) return []
 
-  const rows = (await sql`
-    SELECT id, media_type, caption, alt_text, width, height, small_url,
-      medium_url, large_url, media_url, poster_url, created_at
-    FROM gallery_media
-    WHERE show_in_gallery = TRUE
-    ORDER BY created_at DESC, telegram_message_id ASC
-    LIMIT 200
-  `) as GalleryRow[]
+  try {
+    const rows = (await sql`
+      SELECT id, media_type, caption, alt_text, width, height, small_url,
+        medium_url, large_url, media_url, poster_url, created_at
+      FROM gallery_media
+      WHERE show_in_gallery = TRUE
+      ORDER BY created_at DESC, telegram_message_id ASC
+      LIMIT 200
+    `) as GalleryRow[]
 
-  return rows.map(toGalleryMedia)
+    return rows.map(toGalleryMedia)
+  } catch (error) {
+    // Missing table (e.g. before `npm run db:migrate`) — fall back to local media.
+    if (
+      typeof error === "object" &&
+      error &&
+      "code" in error &&
+      (error as { code?: string }).code === "42P01"
+    ) {
+      return []
+    }
+    throw error
+  }
 }
 
 export const listGalleryMedia = listGalleryMediaFresh

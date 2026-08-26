@@ -1,5 +1,5 @@
 // Thin shim — all logic lives in the component folder.
-import { spotifyLogin } from "@/components/daaysorn-cmp/spotify/auth"
+import { spotifyLogin } from "@/components/thoughtful-cmp/spotify/auth"
 
 export const dynamic = "force-dynamic"
 

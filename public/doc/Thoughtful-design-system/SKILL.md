@@ -1,16 +1,16 @@
 ---
-name: daaysorn-design-system
-description: daaysorn's design system — tokens, fonts, breakpoints, radius, and components for building UI in this repo. Use when building or editing any UI, styling components, choosing colors/spacing/typography, adding responsive/breakpoint behavior, theming (light/dark), or porting the system to another site, or when the user says to use the daaysorn-design-system skill.
+name: Thoughtful-design-system
+description: Thoughtful's design system — tokens, fonts, breakpoints, radius, and components for building UI in this repo. Use when building or editing any UI, styling components, choosing colors/spacing/typography, adding responsive/breakpoint behavior, theming (light/dark), or porting the system to another site, or when the user says to use the Thoughtful-design-system skill.
 ---
 
-# daaysorn Design System
+# Thoughtful Design System
 
 Authoritative rules for building UI in this repo.
 
 |                      |                                                                                                                                          |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Main (edit here)** | `public/doc/daaysorn-design-system/SKILL.md` · https://github.com/daaysorn/daaysorn/blob/main/public/doc/daaysorn-design-system/SKILL.md |
-| **Deep reference**   | `public/doc/designSystem.md` · https://github.com/daaysorn/daaysorn/blob/main/public/doc/designSystem.md                                 |
+| **Main (edit here)** | `public/doc/Thoughtful-design-system/SKILL.md` · https://github.com/Thoughtful/Thoughtful/blob/main/public/doc/Thoughtful-design-system/SKILL.md |
+| **Deep reference**   | `public/doc/designSystem.md` · https://github.com/Thoughtful/Thoughtful/blob/main/public/doc/designSystem.md                                 |
 | **Runtime tokens**   | `app/globals.css`                                                                                                                        |
 
 Read the relevant doc section before non-trivial UI work (progressive disclosure map in the last section).
@@ -32,7 +32,7 @@ Read the relevant doc section before non-trivial UI work (progressive disclosure
 13. Accessibility is non-negotiable: visible focus (`ring-ring`), `aria-label` on icon-only controls, ≥4.5:1 text contrast, external links get `rel="noopener noreferrer"`.
 14. Long unbroken strings (tokens, env lines, URLs, hashes) must wrap — use `min-w-0`, `break-all` / `overflow-wrap-anywhere`, and never let mono blocks overflow. See `public/doc/designSystem.md` §13.6.
 
-15. The brand name is always written as lowercase **daaysorn**, including at the beginning of a sentence and in names such as **daaysorn account** and **daaysorn-cmp**.
+15. The brand name is always written as lowercase **Thoughtful**, including at the beginning of a sentence and in names such as **Thoughtful account** and **Thoughtful-cmp**.
 16. Page body content must stay inside the shared `<main>` column used by Home: `w-full min-w-0`, with the same left and right edges. Do not use viewport-width breakout layouts, negative translation, or page-specific horizontal offsets unless the user explicitly requests a wider page.
 17. Every actionable link must show a pointer cursor. The runtime enforces this globally with `a[href] { cursor: pointer; }`; preserve that rule and use `cursor-pointer` when a component must state the behavior locally.
 18. Keep App Router page files thin. `app/**/page.tsx` owns route concerns such as metadata, params, and revalidation, then imports the page composition from `views/`. Data loading and the full body layout belong in that view. A feature with one view uses `views/<routeName>View.tsx`, such as `views/galleryView.tsx`. As soon as a feature has more than one view file, create `views/<feature>/`, keep all of its views there, and add `views/<feature>/index.ts` to export them to the root `views/index.ts`. Rants therefore lives in `views/rants/`. Reusable or interactive sections belong in `components/<feature>/`. Do not rebuild an entire page body directly in its route file.

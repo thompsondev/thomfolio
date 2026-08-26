@@ -145,7 +145,7 @@ function EditorialDark({ portrait }: { portrait: string }) {
               lineHeight: 1,
             }}
           >
-            daaysorn
+            Thoughtful
           </div>
           <div
             style={{
@@ -192,7 +192,7 @@ function EditorialDark({ portrait }: { portrait: string }) {
           color: "rgba(255,255,255,0.46)",
         }}
       >
-        daaysorn.com
+        Thoughtful.com
       </div>
     </div>
   )
@@ -251,7 +251,7 @@ function GlassIdentity({ portrait }: { portrait: string }) {
                 lineHeight: 1,
               }}
             >
-              daaysorn
+              Thoughtful
             </div>
             <div style={{ display: "flex", marginTop: 22 }}>
               <BrandLine />
@@ -366,7 +366,7 @@ function LightSwiss({ portrait }: { portrait: string }) {
             lineHeight: 0.92,
           }}
         >
-          daaysorn
+          Thoughtful
         </div>
         <div
           style={{
@@ -427,7 +427,7 @@ function LightSwiss({ portrait }: { portrait: string }) {
                 marginTop: 4,
               }}
             >
-              daaysorn.com
+              Thoughtful.com
             </span>
           </div>
           <Portrait src={portrait} size={112} background={palette.white} />
@@ -488,7 +488,7 @@ function PageLightSwiss({
             letterSpacing: "-0.04em",
           }}
         >
-          daaysorn
+          Thoughtful
         </span>
         <span
           style={{
@@ -665,7 +665,7 @@ function SplitContrast({ portrait }: { portrait: string }) {
               marginTop: 18,
             }}
           >
-            daaysorn.com
+            Thoughtful.com
           </span>
         </div>
       </div>
@@ -706,7 +706,7 @@ function SplitContrast({ portrait }: { portrait: string }) {
               marginTop: 7,
             }}
           >
-            behind daaysorn
+            behind Thoughtful
           </span>
         </div>
       </div>
@@ -723,7 +723,7 @@ function SplitContrast({ portrait }: { portrait: string }) {
           letterSpacing: "-0.055em",
         }}
       >
-        daaysorn
+        Thoughtful
       </div>
     </div>
   )
@@ -770,7 +770,7 @@ function ProductConstellation({ portrait }: { portrait: string }) {
             letterSpacing: "-0.05em",
           }}
         >
-          daaysorn
+          Thoughtful
         </span>
         <span
           style={{
@@ -870,7 +870,7 @@ function ProductConstellation({ portrait }: { portrait: string }) {
           color: "rgba(255,255,255,0.42)",
         }}
       >
-        daaysorn.com
+        Thoughtful.com
       </div>
     </div>
   )

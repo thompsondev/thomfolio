@@ -1,4 +1,4 @@
-# daaysorn Components — Install Guide
+# Thoughtful Components — Install Guide
 
 A small **shadcn-compatible registry**. Components are distributed the same way
 shadcn/ui components are: the CLI copies the source files into _your_ project,
@@ -7,12 +7,12 @@ code and can edit it freely.
 
 |                    |                                                                                      |
 | ------------------ | ------------------------------------------------------------------------------------ |
-| **Registry index** | `https://daaysorn.com/r/registry.json`                                               |
+| **Registry index** | `https://Thoughtful.com/r/registry.json`                                               |
 | **Items**          | [`spotify-now-playing`](./spotify-now-playing.md) · [`flip-clock`](./flip-clock.md)  |
 | **Requires**       | Tailwind **v4**, React 19, a shadcn-initialized project (`components.json`)          |
 | **Maintainer?**    | See the [Author Guide](./AUTHOR.md) — how the registry works + how to add components |
 
-> Replace `daaysorn.com` with wherever you host the registry. While developing
+> Replace `Thoughtful.com` with wherever you host the registry. While developing
 > locally it's served from your dev server at `http://localhost:3000/r/...`.
 
 ---
@@ -39,11 +39,11 @@ You also need **Tailwind CSS v4** — these components ship CSS via `@utility` /
 
 ```bash
 # bun
-bunx shadcn@latest add https://daaysorn.com/r/spotify-now-playing.json
-bunx shadcn@latest add https://daaysorn.com/r/flip-clock.json
+bunx shadcn@latest add https://Thoughtful.com/r/spotify-now-playing.json
+bunx shadcn@latest add https://Thoughtful.com/r/flip-clock.json
 
 # npm
-npx shadcn@latest add https://daaysorn.com/r/spotify-now-playing.json
+npx shadcn@latest add https://Thoughtful.com/r/spotify-now-playing.json
 ```
 
 ### Option 2 — by namespace (nicer, one-time setup)
@@ -53,7 +53,7 @@ Add the registry to your `components.json`:
 ```jsonc
 {
   "registries": {
-    "@daaysorn": "https://daaysorn.com/r/{name}.json",
+    "@Thoughtful": "https://Thoughtful.com/r/{name}.json",
   },
 }
 ```
@@ -61,13 +61,13 @@ Add the registry to your `components.json`:
 Then:
 
 ```bash
-bunx shadcn@latest add @daaysorn/spotify-now-playing
-bunx shadcn@latest add @daaysorn/flip-clock
+bunx shadcn@latest add @Thoughtful/spotify-now-playing
+bunx shadcn@latest add @Thoughtful/flip-clock
 ```
 
 ### What the CLI does on `add`
 
-1. **Copies a self-contained folder** — `components/daaysorn-cmp/<name>/` holds
+1. **Copies a self-contained folder** — `components/Thoughtful-cmp/<name>/` holds
    everything the component needs (its own `ui/` primitives, server logic, etc.),
    so nothing is written to your `components/ui/` or `lib/`. Spotify also adds
    thin `app/api/…` route shims (Next.js requires route files under `app/`).

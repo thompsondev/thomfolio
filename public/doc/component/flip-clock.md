@@ -15,17 +15,17 @@ text like `04 : 52 : 41 - 2026 / Your Name` — restyle freely (see
 
 ```bash
 # bun
-bunx shadcn@latest add https://daaysorn.com/r/flip-clock.json
-bunx shadcn@latest add @daaysorn/flip-clock      # if the namespace is configured
+bunx shadcn@latest add https://Thoughtful.com/r/flip-clock.json
+bunx shadcn@latest add @Thoughtful/flip-clock      # if the namespace is configured
 
 # npm
-npx shadcn@latest add https://daaysorn.com/r/flip-clock.json
+npx shadcn@latest add https://Thoughtful.com/r/flip-clock.json
 ```
 
 This copies:
 
 ```
-components/daaysorn-cmp/flipclock/   flip-clock.tsx, flip-unit.tsx, index.ts
+components/Thoughtful-cmp/flipclock/   flip-clock.tsx, flip-unit.tsx, index.ts
 ```
 
 CSS injected: the `flip-fold-top` / `flip-fold-bottom` keyframes and the
@@ -37,7 +37,7 @@ env — it uses your existing `cn()` helper and theme tokens.
 ## Usage
 
 ```tsx
-import { FlipClock } from "@/components/daaysorn-cmp/flipclock"
+import { FlipClock } from "@/components/Thoughtful-cmp/flipclock"
 
 // Viewer's local time
 <FlipClock />

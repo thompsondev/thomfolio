@@ -94,7 +94,7 @@ async function makeWide() {
 
   const header = Buffer.from(
     `<svg width="1280" height="160">
-  <text x="64" y="86" font-size="34" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Roboto">daaysorn</text>
+  <text x="64" y="86" font-size="34" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Roboto">Thoughtful</text>
   <text x="64" y="122" font-size="18" fill="rgba(255,255,255,0.72)" font-family="system-ui, -apple-system, Segoe UI, Roboto">Keeps · Gallery · Rants</text>
 </svg>`
   )
@@ -144,7 +144,7 @@ async function makeNarrow() {
 
   const header = Buffer.from(
     `<svg width="390" height="140">
-  <text x="28" y="82" font-size="24" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Roboto">daaysorn</text>
+  <text x="28" y="82" font-size="24" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Roboto">Thoughtful</text>
   <text x="28" y="112" font-size="14" fill="rgba(255,255,255,0.72)" font-family="system-ui, -apple-system, Segoe UI, Roboto">In your pocket</text>
 </svg>`
   )

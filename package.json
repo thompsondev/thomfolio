@@ -1,5 +1,5 @@
 {
-  "name": "daaysorn",
+  "name": "thomfolio",
   "version": "0.0.1",
   "type": "module",
   "private": true,
@@ -18,7 +18,7 @@
     "keeps:reformat": "bun scripts/reformat-keeps.ts",
     "keeps:cache-previews": "bun scripts/cache-instagram-keep-previews.ts",
     "keeps:audit-previews": "bun scripts/audit-keeps-previews.ts",
-    "db:migrate": "bun scripts/migrate-database.ts",
+    "db:migrate": "tsx --env-file=.env.local scripts/migrate-database.ts",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },
@@ -61,6 +61,7 @@
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }

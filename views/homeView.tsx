@@ -2,26 +2,19 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Fragment, type ReactNode, useState } from "react"
+import { type ReactNode, useState } from "react"
 import {
   PiArrowUpRightBold,
   PiArticleFill,
-  PiBookmarkSimpleFill,
-  PiBowlFoodFill,
+  PiBrainFill,
   PiBracketsCurlyDuotone,
-  PiBrowserFill,
-  PiCoatHangerFill,
-  PiCubeFill,
+  PiCloudFill,
+  PiCurrencyDollarFill,
   PiEnvelopeSimpleFill,
   PiGithubLogoFill,
-  PiInstagramLogoFill,
-  PiImagesSquareFill,
-  PiLightningFill,
-  PiNotebookFill,
+  PiLinkedinLogoFill,
   PiShoppingCartSimpleFill,
-  PiUserCircleFill,
   PiXLogoFill,
-  PiYoutubeLogoFill,
 } from "react-icons/pi"
 import type { IconType } from "react-icons"
 
@@ -29,8 +22,9 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/daaysorn-cmp/spotify/ui/hover-card"
+} from "@/components/ui/hover-card"
 import links from "@/json/links.json"
+import { industries, industryHref, portfolioPreviewRoutes } from "@/lib/portfolio"
 import { localOpenGraphImageSrc } from "@/lib/og-path"
 import { cn } from "@/lib/utils"
 
@@ -38,11 +32,11 @@ const linkClassName =
   "rounded-sm font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
 
 const productIcons: Record<string, IconType> = {
-  tech: PiBracketsCurlyDuotone,
-  energy: PiLightningFill,
+  software: PiBracketsCurlyDuotone,
+  ai: PiBrainFill,
+  fintech: PiCurrencyDollarFill,
+  saas: PiCloudFill,
   ecommerce: PiShoppingCartSimpleFill,
-  wears: PiCoatHangerFill,
-  food: PiBowlFoodFill,
 }
 
 type PreviewLinkProps = {
@@ -58,14 +52,7 @@ type PreviewLinkProps = {
 
 const passthroughImageLoader = ({ src }: { src: string }) => src
 const loadedPreviews = new Set<string>()
-const localPreviewRoutes = new Set([
-  "/",
-  "/gallery",
-  "/keeps",
-  "/privacy",
-  "/rants",
-  "/terms",
-])
+const localPreviewRoutes = new Set<string>(portfolioPreviewRoutes)
 
 const SitePreview = ({
   href,
@@ -198,13 +185,41 @@ const PreviewLink = ({
   </HoverCard>
 )
 
+const SocialTextLink = ({
+  href,
+  label,
+  icon,
+  description,
+}: {
+  href: string
+  label: string
+  icon: IconType
+  description: string
+}) => {
+  if (!href.trim()) {
+    return <span className="font-medium text-foreground">{label}</span>
+  }
+
+  return (
+    <PreviewLink
+      href={href}
+      label={label}
+      description={description}
+      icon={icon}
+      external={href.startsWith("http")}
+    />
+  )
+}
+
 const HomeView = () => {
-  const accountHref = links.account.createHref.trim()
+  const softwareProduct = links.products.find(
+    (product) => product.key === "software"
+  )
 
   return (
     <article className="min-w-0 pb-8 md:pb-32">
-      <h1 className="text-3xl leading-none font-bold tracking-tight xs:text-4xl md:text-3xl">
-        Opeyemi Thompson
+      <h1 className="font-heading text-3xl leading-none font-bold tracking-tight xs:text-4xl md:text-3xl">
+        Thompson Opeyemi
       </h1>
 
       <div className="mt-8 min-w-0 text-base leading-8 text-muted-foreground md:mt-7 md:text-lg md:leading-9">
@@ -219,7 +234,7 @@ const HomeView = () => {
         >
           <Image
             src="/images/logo.png"
-            alt="Opeyemi Thompson"
+            alt="Thompson Opeyemi"
             fill
             priority
             sizes="(min-width: 768px) 11rem, (min-width: 360px) 9rem, 8rem"
@@ -228,214 +243,105 @@ const HomeView = () => {
         </div>
 
         <p>
-          I&apos;m a founder, designer, and builder creating meaningful brands
-          and products that work as beautifully as they look. I bring ideas to
-          life through clear, thoughtful experiences people can understand and
-          enjoy. My faith shapes who I am, and I&apos;m growing as a Christian
-          with{" "}
-          <PreviewLink
-            href={links.faith.href}
-            label={links.faith.label}
-            description="A church family helping me grow in faith and know Christ more deeply."
-            icon={PiBrowserFill}
-            logoSrc={links.faith.logoHref}
-            external
-          >
-            <span
-              aria-hidden="true"
-              className="mr-1 inline-block h-[0.8em] w-9 bg-size-[auto_100%] bg-left bg-no-repeat align-baseline"
-              style={{ backgroundImage: `url(${links.faith.logoHref})` }}
-            />
-            {links.faith.label}
-          </PreviewLink>
-          . Join me for weekday devotion with{" "}
-          <PreviewLink
-            href={links.faith.devotion.href}
-            label={links.faith.devotion.label}
-            description="Weekday prayer, Bible study, and devotion with the Triumph30 community."
-            icon={PiYoutubeLogoFill}
-            logoSrc={links.faith.devotion.logoHref}
-            external
-          >
-            <Image
-              loader={passthroughImageLoader}
-              unoptimized
-              src={links.faith.devotion.iconHref}
-              alt=""
-              width={18}
-              height={18}
-              referrerPolicy="no-referrer"
-              className="mr-1 inline-block size-[0.9em] rounded-full object-contain align-[-0.08em]"
-            />
-            {links.faith.devotion.label}
-          </PreviewLink>
-          , Monday to Friday from 6 to 7 a.m. WAT.
+          I&apos;m a software engineer, product builder, and problem solver
+          building products that turn complicated ideas into simple, useful
+          experiences. I work across software engineering, AI, fintech, SaaS,
+          and automation, combining technical thinking with product intuition to
+          take ideas from &ldquo;what if?&rdquo; to something people can
+          actually use.
         </p>
 
         <p className="clear-none mt-5">
-          My work connects how a brand feels, how a product looks, and how
-          people experience it. I care about the details people notice, the
-          quiet choices that make things work, and the clarity that brings
-          everything together. Read my passing thoughts in{" "}
-          <PreviewLink
-            href={links.content.rants.href}
-            label={links.content.rants.label}
-            description="Thoughts, lessons, and ideas from what I am learning and making."
-            icon={PiArticleFill}
-          >
-            {links.content.rants.label}
-          </PreviewLink>{" "}
-          and share your perspective, browse moments from my life in{" "}
-          <PreviewLink
-            href={links.content.gallery.href}
-            label={links.content.gallery.label}
-            description="A visual collection of moments from my life and work."
-            icon={PiImagesSquareFill}
-          >
-            {links.content.gallery.label}
-          </PreviewLink>
-          , or visit{" "}
-          <PreviewLink
-            href={links.content.keeps.href}
-            label={links.content.keeps.label}
-            description="Posts, articles, videos, and ideas I found worth keeping."
-            icon={PiBookmarkSimpleFill}
-          >
-            {links.content.keeps.label}
-          </PreviewLink>{" "}
-          for ideas, stories, and finds worth returning to.
-        </p>
-
-        <p className="mt-5">
-          A fun thing about{" "}
-          <PreviewLink
-            href={links.content.keeps.href}
-            label={links.content.keeps.label}
-            description="Save useful finds into your own private collection and keep it in sync across devices."
-            icon={PiBookmarkSimpleFill}
-          >
-            {links.content.keeps.label}
-          </PreviewLink>{" "}
-          is that you can keep your favourites from my collection, build your
-          own little reading list, and carry it between your devices. It still
-          works offline, then catches up when you are connected again.
+          Over the years, I&apos;ve worked on products across fintech, financial
+          services, SaaS, AI, e-commerce, infrastructure, and automation. Some
+          of the things I&apos;ve built or contributed to include platforms
+          processing 1,000+ monthly applications, AI products used by 100+
+          users, products generating $50k+ in revenue, and e-commerce systems
+          involving 10,000+ products.
         </p>
 
         <p className="clear-both mt-5">
-          You can follow how I make this website in the{" "}
-          <PreviewLink
-            href={links.code.repositoryHref}
-            label="daaysorn repository"
-            description="See how this website is designed and built in public."
-            icon={PiGithubLogoFill}
-            external
-          >
-            daaysorn repository
-          </PreviewLink>
-          . It is where I share how ideas grow into clear, useful products and
-          how I make each part feel considered.{" "}
-          <PreviewLink
-            href={links.code.componentsHref}
-            label="daaysorn-cmp"
-            description="Reusable building blocks shared across my products."
-            icon={PiCubeFill}
-            external
-          >
-            daaysorn-cmp
-          </PreviewLink>{" "}
-          is my collection of ready-made building blocks. It works with{" "}
-          <PreviewLink
-            href={links.platforms.shadcn.href}
-            label={links.platforms.shadcn.label}
-            description="A source-first component system for building your own interface library."
-            icon={PiCubeFill}
-            external
-          >
-            {links.platforms.shadcn.label}
-          </PreviewLink>
-          , Next.js, React, Tailwind CSS, and registry-based installs. I use it
-          to keep my products familiar, easy to use, and consistent wherever
-          they appear.
+          I enjoy building from the ground up. That could mean designing a
+          frontend with React and Next.js, architecting APIs with Node.js and
+          NestJS, working with PostgreSQL or MongoDB, integrating payment and
+          financial services, connecting AI models to real products, or
+          automating a process that previously required hours of manual work.
         </p>
 
         <p className="mt-5">
-          My product spans across{" "}
-          {links.products.map((product, index) => {
-            const ProductIcon = productIcons[product.key]
-
-            return (
-              <Fragment key={product.label}>
-                {index > 0
-                  ? index === links.products.length - 1
-                    ? ", and "
-                    : ", "
-                  : null}
-                <PreviewLink
-                  href={product.href}
-                  label={product.label}
-                  description={product.description}
-                  icon={ProductIcon}
-                  className="inline-flex items-center gap-1 align-baseline"
-                >
-                  <ProductIcon
-                    aria-hidden="true"
-                    className="size-[1em] shrink-0 text-primary"
-                  />
-                  {product.label}
-                </PreviewLink>
-              </Fragment>
-            )
-          })}
-          . Every product follows the daaysorn design system so it feels clear,
-          familiar, and consistent. I have made developer-ready documentation
-          for integrating with{" "}
-          <PreviewLink
-            href={links.brand.href}
-            label="daaysorn"
-            description="One connected home for the products I create."
-            icon={PiBrowserFill}
-          >
-            daaysorn
-          </PreviewLink>{" "}
-          available in{" "}
-          <PreviewLink
-            href={links.documentation.href}
-            label={links.documentation.label}
-            description="Developer-ready guidance for connecting with daaysorn."
-            icon={PiNotebookFill}
-          >
-            {links.documentation.label}
-          </PreviewLink>
-          . They may look different, but they share one goal: to feel clear,
-          connected, and made with care.
+          A big part of my work is also experimentation. I like taking an idea,
+          building the smallest useful version of it, putting it in front of
+          people, learning what breaks, and making it better. Some of these
+          experiments become products; others become lessons that influence what
+          I build next.
         </p>
 
         <p className="mt-5">
-          Access is connected too. One{" "}
-          <PreviewLink
-            href={accountHref || links.brand.href}
-            label="daaysorn account"
-            description="One account for moving easily between every daaysorn product."
-            icon={PiUserCircleFill}
-            external={accountHref.startsWith("http")}
-          >
-            daaysorn account
-          </PreviewLink>{" "}
-          gives you access across my products, much like one Google Account
-          works across Google&apos;s services. You sign in once and move between{" "}
-          <PreviewLink
-            href={links.brand.href}
-            label="daaysorn"
-            description="Explore the connected products and experiences from daaysorn."
-            icon={PiBrowserFill}
-          >
-            daaysorn
-          </PreviewLink>{" "}
-          products without starting over each time.
+          You can explore some of my{" "}
+          {softwareProduct ? (
+            <PreviewLink
+              href={softwareProduct.href}
+              label={softwareProduct.label}
+              description={softwareProduct.description}
+              icon={productIcons.software}
+              className="inline-flex items-center gap-1 align-baseline"
+            >
+              <PiBracketsCurlyDuotone
+                aria-hidden="true"
+                className="size-[1em] shrink-0 text-primary"
+              />
+              Software &amp; Engineering
+            </PreviewLink>
+          ) : (
+            "Software & Engineering"
+          )}{" "}
+          work, experiments, product ideas, and technical projects here.
+          I&apos;m particularly interested in the intersection of software, AI,
+          fintech, automation, and products that solve real problems.
         </p>
 
         <p className="mt-5">
-          You can see the work as it develops on{" "}
+          My toolbox includes React, Next.js, TypeScript, JavaScript, Node.js,
+          NestJS, PostgreSQL, MongoDB, AWS, Docker, REST APIs, AI/LLM APIs, and
+          modern web technologies. I&apos;m comfortable moving between the
+          interface, backend, infrastructure, and product layer when the problem
+          requires it. See my{" "}
+          <PreviewLink
+            href="/experience"
+            label="Experience"
+            description="Roles and work across fintech, AI, and SaaS."
+            icon={PiBracketsCurlyDuotone}
+          >
+            experience
+          </PreviewLink>{" "}
+          for a fuller picture.
+        </p>
+
+        <p className="mt-5">
+          I also enjoy sharing what I&apos;m learning along the way — from
+          engineering lessons and product decisions to things I&apos;ve
+          discovered while building. You can find my thoughts on{" "}
+          <SocialTextLink
+            href={links.social.linkedinHref}
+            label="LinkedIn"
+            icon={PiLinkedinLogoFill}
+            description="Engineering lessons, product decisions, and updates from what I’m building."
+          />
+          ,{" "}
+          <SocialTextLink
+            href={links.social.xHref}
+            label="X"
+            icon={PiXLogoFill}
+            description="Short updates and thoughts along the way."
+          />
+          , and{" "}
+          <SocialTextLink
+            href={links.social.mediumHref}
+            label="Medium"
+            icon={PiArticleFill}
+            description="Longer notes on engineering, products, and lessons from building."
+          />
+          , and follow the projects I&apos;m building on{" "}
           <PreviewLink
             href={links.code.profileHref}
             label="GitHub"
@@ -445,48 +351,232 @@ const HomeView = () => {
           >
             GitHub
           </PreviewLink>
-          , or follow along on{" "}
-          <PreviewLink
-            href={links.social.instagramHref}
-            label="Instagram"
-            description="See visual notes, ideas, and work in progress."
-            icon={PiInstagramLogoFill}
-            external
-          >
-            Instagram
-          </PreviewLink>{" "}
-          and{" "}
-          <PreviewLink
-            href={links.social.xHref}
-            label="X"
-            description="Follow short updates and thoughts along the way."
-            icon={PiXLogoFill}
-            external
-          >
-            X
-          </PreviewLink>
-          . You can also read the{" "}
-          <Link href="/privacy" className={linkClassName}>
-            Privacy Policy
-          </Link>{" "}
-          and{" "}
-          <Link href="/terms" className={linkClassName}>
-            Terms of Service
-          </Link>
           .
         </p>
 
+        <h2 className="mt-10 font-heading text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+          Things I build
+        </h2>
+
+        <ul className="mt-5 space-y-5">
+          {links.products.map((product) => {
+            const ProductIcon = productIcons[product.key]
+
+            return (
+              <li key={product.key}>
+                <p>
+                  <PreviewLink
+                    href={product.href}
+                    label={product.label}
+                    description={product.description}
+                    icon={ProductIcon}
+                    className="inline-flex items-center gap-1.5 align-baseline font-heading font-semibold text-foreground"
+                  >
+                    <ProductIcon
+                      aria-hidden="true"
+                      className="size-[1em] shrink-0 text-primary"
+                    />
+                    {product.label}
+                  </PreviewLink>
+                </p>
+                <p className="mt-1">{product.description}</p>
+              </li>
+            )
+          })}
+        </ul>
+
         <p className="mt-5">
-          If you have a brand to shape or a product worth making,{" "}
+          Explore{" "}
           <PreviewLink
-            href={links.contact.href}
-            label="Get in touch"
-            description="Start a conversation about a brand, product, or new idea."
-            icon={PiEnvelopeSimpleFill}
+            href="/work"
+            label="Work"
+            description="Focus areas across software, AI, fintech, SaaS, and commerce."
+            icon={PiBracketsCurlyDuotone}
           >
-            get in touch
+            all focus areas
           </PreviewLink>
           .
+        </p>
+
+        <h2 className="mt-10 font-heading text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+          The things I&apos;m building
+        </h2>
+
+        <p className="mt-5">I&apos;m always experimenting with new ideas.</p>
+
+        <p className="mt-5">
+          Some become products.
+          <br />
+          Some become open-source projects.
+          <br />
+          Some stay experiments.
+        </p>
+
+        <p className="mt-5">
+          <span className="font-heading font-semibold text-foreground">
+            Noviq
+          </span>{" "}
+          is one of the ideas I&apos;m currently exploring — an AI-powered
+          system designed to discover businesses, understand what they sell,
+          identify relevant decision-makers, and help generate personalised
+          marketing content around their products.
+        </p>
+
+        <p className="mt-5">
+          The goal is simple: use software and AI to remove the repetitive work
+          between discovering an opportunity and creating something valuable for
+          that business.
+        </p>
+
+        <h2 className="mt-10 font-heading text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+          Open to collaborate
+        </h2>
+
+        <p className="mt-5">
+          I am open to collaborating with teams and founders across industries —
+          especially where software, AI, automation, or product craft can remove
+          real friction. Browse{" "}
+          <PreviewLink
+            href="/industries"
+            label="Industries"
+            description="Verticals I am open to collaborating with."
+            icon={PiCloudFill}
+          >
+            industries
+          </PreviewLink>{" "}
+          or jump into one:
+        </p>
+
+        <ul className="mt-5 space-y-3">
+          {industries.map((industry) => (
+            <li key={industry.slug}>
+              <PreviewLink
+                href={industryHref(industry.slug)}
+                label={industry.label}
+                description={industry.description}
+                icon={PiCloudFill}
+                className="font-heading font-semibold text-foreground"
+              >
+                {industry.label}
+              </PreviewLink>
+              <span className="text-muted-foreground">
+                {" "}
+                — {industry.tagline}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mt-10 font-heading text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+          My approach
+        </h2>
+
+        <p className="mt-5">I like simple things.</p>
+
+        <p className="mt-5">
+          Simple interfaces.
+          <br />
+          Clear APIs.
+          <br />
+          Good documentation.
+          <br />
+          Useful abstractions.
+          <br />
+          Fast products.
+          <br />
+          Systems that don&apos;t need a 30-minute explanation before someone
+          can use them.
+        </p>
+
+        <p className="mt-5">
+          But simplicity isn&apos;t about making things basic.
+        </p>
+
+        <p className="mt-5">
+          It&apos;s about understanding the complexity underneath well enough
+          that the person using the product doesn&apos;t have to carry it.
+        </p>
+
+        <p className="mt-5">
+          That&apos;s the kind of software I want to build.
+        </p>
+
+        <h2 className="mt-10 font-heading text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+          Find me
+        </h2>
+
+        <p className="mt-5">
+          You can follow what I&apos;m building and learning on:
+        </p>
+
+        <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1">
+          <PreviewLink
+            href={links.code.profileHref}
+            label="GitHub"
+            description="Follow the code and projects as they develop."
+            icon={PiGithubLogoFill}
+            external
+            className="inline-flex items-center gap-1"
+          >
+            <PiGithubLogoFill
+              aria-hidden="true"
+              className="size-[1em] shrink-0 text-primary"
+            />
+            GitHub
+          </PreviewLink>
+          <span aria-hidden="true">·</span>
+          <SocialTextLink
+            href={links.social.linkedinHref}
+            label="LinkedIn"
+            icon={PiLinkedinLogoFill}
+            description="Engineering lessons, product decisions, and updates from what I’m building."
+          />
+          <span aria-hidden="true">·</span>
+          <SocialTextLink
+            href={links.social.xHref}
+            label="X"
+            icon={PiXLogoFill}
+            description="Short updates and thoughts along the way."
+          />
+          <span aria-hidden="true">·</span>
+          <SocialTextLink
+            href={links.social.mediumHref}
+            label="Medium"
+            icon={PiArticleFill}
+            description="Longer notes on engineering, products, and lessons from building."
+          />
+        </p>
+
+        <p className="mt-5">
+          If you&apos;re building something ambitious, solving an interesting
+          problem, or simply want to talk about software, AI, products, or
+          startups:
+        </p>
+
+        <p className="mt-5">
+          <PreviewLink
+            href={links.contact.href}
+            label="Let's talk"
+            description="Start a conversation about software, AI, products, or startups."
+            icon={PiEnvelopeSimpleFill}
+            className="inline-flex items-center gap-1.5 font-heading font-semibold"
+          >
+            <PiEnvelopeSimpleFill
+              aria-hidden="true"
+              className="size-[1em] shrink-0 text-primary"
+            />
+            Let&apos;s talk.
+          </PreviewLink>
+        </p>
+
+        <p className="mt-8 text-sm leading-7 md:text-base">
+          <Link href="/privacy" className={linkClassName}>
+            Privacy Policy
+          </Link>
+          {" · "}
+          <Link href="/terms" className={linkClassName}>
+            Terms of Service
+          </Link>
         </p>
       </div>
     </article>

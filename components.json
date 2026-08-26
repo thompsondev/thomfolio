@@ -23,6 +23,6 @@
   },
   "registries": {
     "@magicui": "https://magicui.design/r/{name}",
-    "@daaysorn": "https://daaysorn.com/r/{name}.json"
+    "@Thoughtful": "https://Thoughtful.com/r/{name}.json"
   }
 }

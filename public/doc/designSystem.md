@@ -1,10 +1,10 @@
-# daaysorn Design System
+# Thoughtful Design System
 
 > **Source of truth:** this document reflects the live codebase. Tokens live in `app/globals.css`. Fonts and shell layout live in `app/layout.tsx`. Components live under `components/`.
 
 | Meta          | Value                                                                                              |
 | ------------- | -------------------------------------------------------------------------------------------------- |
-| Product       | daaysorn                                                                                           |
+| Product       | Thoughtful                                                                                           |
 | UI kit        | shadcn/ui (`radix-vega` style)                                                                     |
 | Theme origin  | [shadcn/ui Create](https://ui.shadcn.com/create) → generated `app/globals.css` + `components.json` |
 | Styling       | Tailwind CSS v4 + CSS variables (OKLCH)                                                            |
@@ -137,7 +137,7 @@ implementation directly in `app/**/page.tsx`.
 | `components.json` | CLI config (`style`, `baseColor`, aliases, registries)      |
 | `components/ui/*` | Components that consume those tokens via Tailwind utilities |
 
-**daaysorn extensions on top of that scaffold** (do not confuse with the shadcn export itself):
+**Thoughtful extensions on top of that scaffold** (do not confuse with the shadcn export itself):
 
 - Font roles: Geist / Montserrat / JetBrains Mono in `app/layout.tsx` + base-layer heading/code rules
 - Breakpoints: `watch` + `xs` in a plain `@theme` block
@@ -527,7 +527,7 @@ Think of it as:
 ```
 Tailwind defaults ………………………………… kept intact (ecosystem)
          ↓
-daaysorn extensions ……… watch + xs (product reality below 640px)
+Thoughtful extensions ……… watch + xs (product reality below 640px)
 ```
 
 ---
@@ -552,7 +552,7 @@ Without `xs` / `watch`, teams either:
 2. Misuse `sm:` for “phone,” which **never fires on iPhone 12**, or
 3. Sprinkle arbitrary `min-[390px]:` everywhere — unmaintainable
 
-That is the gap daaysorn closes.
+That is the gap Thoughtful closes.
 
 ---
 
@@ -580,7 +580,7 @@ That is the gap daaysorn closes.
 
 #### Full scale
 
-| Prefix   | Min width  | ≈ px     | Role in daaysorn                                        |
+| Prefix   | Min width  | ≈ px     | Role in Thoughtful                                        |
 | -------- | ---------- | -------- | ------------------------------------------------------- |
 | _(base)_ | `0`        | 0        | Default phone / tiny UI — **always start here**         |
 | `watch:` | `18.75rem` | **300**  | Crossed “ultra-narrow” floor (rarely used as min-width) |
@@ -599,7 +599,7 @@ That is the gap daaysorn closes.
 │          │          │                │     │     │       │       │
 │  SE 320  │          │  iPhone 12 390 │     │ iPad│laptop │desk   │wide
 │  watch*  │          │  Pro Max 430   │     │     │       │       │
-│          └ daaysorn extensions ──────┘     └──── Tailwind defaults ────┘
+│          └ Thoughtful extensions ──────┘     └──── Tailwind defaults ────┘
 ```
 
 Native watch CSS widths (~136–184) sit **below** 300 when `disabled-adaptations` is on.
@@ -619,7 +619,7 @@ Native watch CSS widths (~136–184) sit **below** 300 when `disabled-adaptation
 | **Onboarding**                  | “Why doesn’t `sm:` work on my phone?”                     | Design system answers in one place              |
 | **Shell strategy**              | `max-w-md` alone, no responsive vocabulary                | Same shell + clear when to widen (`md:`, `lg:`) |
 
-**Especially for daaysorn’s current shell** (`max-w-md` / 448px phone column): almost all real phones never hit `sm:`. Extending _below_ Tailwind is what makes responsive language useful for this product shape.
+**Especially for Thoughtful’s current shell** (`max-w-md` / 448px phone column): almost all real phones never hit `sm:`. Extending _below_ Tailwind is what makes responsive language useful for this product shape.
 
 ---
 
@@ -710,7 +710,7 @@ Do **not** put primary brand layout inside `watch:` min-width alone — that wou
 
 ### 7.10 Summary — our stance in one paragraph
 
-**We follow Tailwind for tablet → wide (**`sm`**–**`2xl`**) so the ecosystem stays coherent. We do not pretend Tailwind’s** `sm` **means “phone.”** Phones (including iPhone 12 at 390 CSS px) live in **base**, with `xs:` as our named step for modern compact screens, and `watch:` **/** `max-watch:` as an intentional ultra-narrow / wearable escape hatch. That combination is more honest about real CSS viewports, keeps shadcn compatible, and gives daaysorn a precise language for the widths we actually ship to.
+**We follow Tailwind for tablet → wide (**`sm`**–**`2xl`**) so the ecosystem stays coherent. We do not pretend Tailwind’s** `sm` **means “phone.”** Phones (including iPhone 12 at 390 CSS px) live in **base**, with `xs:` as our named step for modern compact screens, and `watch:` **/** `max-watch:` as an intentional ultra-narrow / wearable escape hatch. That combination is more honest about real CSS viewports, keeps shadcn compatible, and gives Thoughtful a precise language for the widths we actually ship to.
 
 ---
 
@@ -859,7 +859,7 @@ Home identity art still uses `renderOgImage` variants.
 | ------------- | --------------------------------------------------------------------------------------------------------- |
 | `title`       | Short page name (Montserrat, large).                                                                      |
 | `description` | **One line only** — never wrap. Keep copy short (roughly **≤72 characters**). Template uses `nowrap`.     |
-| `path`        | Display path such as `daaysorn.com/privacy` (use `formatOgSitePath`).                                     |
+| `path`        | Display path such as `Thoughtful.com/privacy` (use `formatOgSitePath`).                                     |
 | `labels`      | Optional footer chips (first label emphasized).                                                           |
 
 ```tsx
@@ -868,7 +868,7 @@ import { createPageOgImage } from "@/lib/og-page"
 
 const og = createPageOgImage({
   title: "Privacy Policy",
-  description: "How daaysorn collects, uses, and protects information.", // one line
+  description: "How Thoughtful collects, uses, and protects information.", // one line
   path: "/privacy",
   labels: ["Legal", "Privacy", "Data"],
 })
@@ -945,13 +945,13 @@ npx shadcn@latest add @magicui/<name>   # via components.json registries
 
 **Change the whole visual theme**
 
-Edit or replace the **values** in `app/globals.css` (`:root` + `.dark`). Keep the **same token names**. Every shadcn/daaysorn component restyles with no TSX edits.
+Edit or replace the **values** in `app/globals.css` (`:root` + `.dark`). Keep the **same token names**. Every shadcn/Thoughtful component restyles with no TSX edits.
 
 You can regenerate a new palette from [ui.shadcn.com/create](https://ui.shadcn.com/create) and paste the new `:root` / `.dark` (and related) token blocks into `globals.css` — as long as you preserve:
 
 1. Semantic token names (`--background`, `--primary`, `--radius`, …)
 2. `@theme inline` mappings (`--color-primary: var(--primary)`, …)
-3. Our daaysorn additions you still want (font CSS vars, `watch`/`xs` breakpoints, heading/code base rules)
+3. Our Thoughtful additions you still want (font CSS vars, `watch`/`xs` breakpoints, heading/code base rules)
 
 **Do not** rename tokens or hard-code hex/oklch in `components/ui`. That is what breaks portability and shadcn.
 
@@ -1258,7 +1258,7 @@ Edit `--radius` in `:root`; the entire `sm`–`4xl` scale recalculates.
 
 ## 15. Portability & multi-brand — use on any site
 
-> **Goal:** the _same_ system drops into any website by swapping **token values only**. The architecture (token names, roles, scales, component APIs) stays fixed. This is exactly what already ships in daaysorn — this section just formalizes the contract so it travels.
+> **Goal:** the _same_ system drops into any website by swapping **token values only**. The architecture (token names, roles, scales, component APIs) stays fixed. This is exactly what already ships in Thoughtful — this section just formalizes the contract so it travels.
 
 ### 15.1 Three-tier token model
 
@@ -1344,11 +1344,11 @@ Record every change in the [Changelog](#changelog-design-system-doc).
 
 ### 15.7 Full theme replacement (shadcn Create → this repo)
 
-Someone adopting daaysorn (or rebranding it) can throw away the current look entirely:
+Someone adopting Thoughtful (or rebranding it) can throw away the current look entirely:
 
 1. Open [shadcn/ui Create](https://ui.shadcn.com/create) and pick a new style / base color / radius.
 2. Copy the generated CSS variable blocks into `app/globals.css` (replace `:root` and `.dark` values — keep names).
-3. Keep (or re-apply) daaysorn-specific layers you still need: font variables in `layout.tsx`, `--breakpoint-watch` / `--breakpoint-xs`, base `h*` / `code` rules.
+3. Keep (or re-apply) Thoughtful-specific layers you still need: font variables in `layout.tsx`, `--breakpoint-watch` / `--breakpoint-xs`, base `h*` / `code` rules.
 4. Leave `components/ui` alone — they already bind to the semantic contract.
 5. Optionally align `components.json` (`style`, `baseColor`) with what you generated so future `shadcn add` stays consistent.
 
@@ -1362,15 +1362,15 @@ This design system is exposed to AI coding agents as a **project skill** so any 
 
 | Item                    | Value                                                                                                                                          |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Skill (edit here)**   | https://github.com/daaysorn/daaysorn/blob/main/public/doc/daaysorn-design-system/SKILL.md · local `public/doc/daaysorn-design-system/SKILL.md` |
-| Skill name              | `daaysorn-design-system`                                                                                                                       |
-| Deep reference          | this file · https://github.com/daaysorn/daaysorn/blob/main/public/doc/designSystem.md                                                          |
+| **Skill (edit here)**   | https://github.com/Thoughtful/Thoughtful/blob/main/public/doc/Thoughtful-design-system/SKILL.md · local `public/doc/Thoughtful-design-system/SKILL.md` |
+| Skill name              | `Thoughtful-design-system`                                                                                                                       |
+| Deep reference          | this file · https://github.com/Thoughtful/Thoughtful/blob/main/public/doc/designSystem.md                                                          |
 | Runtime source of truth | `app/globals.css`                                                                                                                              |
 
 ### 16.1 How to invoke
 
-- **Humans:** ask the agent to _“use the daaysorn-design-system skill”_ (or mention design system / tokens / breakpoints / theming), then describe the UI.
-- **Agents:** read `public/doc/daaysorn-design-system/SKILL.md` (GitHub: https://github.com/daaysorn/daaysorn/blob/main/public/doc/daaysorn-design-system/SKILL.md), then consult the relevant section of this doc via progressive disclosure before writing UI code.
+- **Humans:** ask the agent to _“use the Thoughtful-design-system skill”_ (or mention design system / tokens / breakpoints / theming), then describe the UI.
+- **Agents:** read `public/doc/Thoughtful-design-system/SKILL.md` (GitHub: https://github.com/Thoughtful/Thoughtful/blob/main/public/doc/Thoughtful-design-system/SKILL.md), then consult the relevant section of this doc via progressive disclosure before writing UI code.
 
 ### 16.2 What the skill enforces (summary)
 
@@ -1418,7 +1418,7 @@ consistent across body links, cards, navigation, previews, and social links.
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Initial        | Full audit of fonts (Geist / Montserrat / JetBrains Mono), OKLCH tokens, radius scale, shell layout, Button / Tooltip / Dock / Footer, theme provider, Tailwind default breakpoints                                                                                                                                                  |
 | Breakpoints    | Deep §7: why Tailwind isn’t “wrong,” what we keep vs extend (`watch`/`xs`), how it helps phones (incl. iPhone 12), wearables, shadcn compatibility, anti-patterns                                                                                                                                                                    |
-| Portability    | Added §15 (three-tier tokens, fixed-vs-swappable contract, brand-swap mechanics, a11y contract, versioning) + §16 agent skill usage; skill at [https://github.com/daaysorn/daaysorn/blob/main/public/doc/daaysorn-design-system/SKILL.md](https://github.com/daaysorn/daaysorn/blob/main/public/doc/daaysorn-design-system/SKILL.md) |
+| Portability    | Added §15 (three-tier tokens, fixed-vs-swappable contract, brand-swap mechanics, a11y contract, versioning) + §16 agent skill usage; skill at [https://github.com/Thoughtful/Thoughtful/blob/main/public/doc/Thoughtful-design-system/SKILL.md](https://github.com/Thoughtful/Thoughtful/blob/main/public/doc/Thoughtful-design-system/SKILL.md) |
 | shadcn Create  | Documented origin of `globals.css` from [ui.shadcn.com/create](https://ui.shadcn.com/create); §2.1, §9.4, §15.7 — replace theme values freely, keep token names; shadcn `add` works unchanged                                                                                                                                        |
 | Overflow wrap  | §13.6 — long tokens/URLs/env lines must use `break-all` + `overflow-wrap` / `min-w-0`; Spotify auth callback fixed                                                                                                                                                                                                                   |
 | Feedback UI    | §3.6 muted text hierarchy; §8.7 ghost patterns, skeletons, pulse, text-shimmer (`5.5s ease-in-out`)                                                                                                                                                                                                                                  |

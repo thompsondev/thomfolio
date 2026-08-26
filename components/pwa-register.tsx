@@ -12,7 +12,7 @@ type ExtendedRegistration = ServiceWorkerRegistration & {
 
 declare global {
   interface Window {
-    __daaysornInstallPrompt?: Event | null
+    __ThoughtfulInstallPrompt?: Event | null
   }
 }
 
@@ -30,15 +30,15 @@ export function PWARegister() {
           const keys = await caches.keys()
           await Promise.all(
             keys
-              .filter((key) => key.startsWith("daaysorn-"))
+              .filter((key) => key.startsWith("Thoughtful-"))
               .map((key) => caches.delete(key))
           )
         }
         if (
           navigator.serviceWorker.controller &&
-          !sessionStorage.getItem("daaysorn-dev-sw-cleared")
+          !sessionStorage.getItem("Thoughtful-dev-sw-cleared")
         ) {
-          sessionStorage.setItem("daaysorn-dev-sw-cleared", "true")
+          sessionStorage.setItem("Thoughtful-dev-sw-cleared", "true")
           window.location.reload()
         }
       }
@@ -49,12 +49,12 @@ export function PWARegister() {
     const beforeInstall = (event: Event) => {
       const prompt = event as InstallPromptEvent
       prompt.preventDefault()
-      window.__daaysornInstallPrompt = prompt
-      window.dispatchEvent(new Event("daaysorn:installable"))
+      window.__ThoughtfulInstallPrompt = prompt
+      window.dispatchEvent(new Event("Thoughtful:installable"))
     }
     const installed = () => {
-      window.__daaysornInstallPrompt = null
-      window.dispatchEvent(new Event("daaysorn:installed"))
+      window.__ThoughtfulInstallPrompt = null
+      window.dispatchEvent(new Event("Thoughtful:installed"))
     }
     let refreshing = false
     const controllerChanged = () => {
@@ -79,7 +79,7 @@ export function PWARegister() {
         await registration.update()
         try {
           await registration.periodicSync?.register(
-            "daaysorn-daily-content-refresh",
+            "Thoughtful-daily-content-refresh",
             { minInterval: 24 * 60 * 60 * 1000 }
           )
         } catch {
@@ -89,7 +89,7 @@ export function PWARegister() {
         const requestRecoverySync = async () => {
           try {
             await registration.sync?.register(
-              "daaysorn-refresh-offline-content"
+              "Thoughtful-refresh-offline-content"
             )
           } catch {
             // Online and focus refresh remain the fallback.
